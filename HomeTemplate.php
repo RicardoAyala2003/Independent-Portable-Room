@@ -20,7 +20,7 @@ get_header(); ?>
   <?php
     // [FOTO/VIDEO — Pend. #D] Placeholder temporal (Unsplash License, libre de uso).
     // Reemplazar por material real de campo cuando el cliente lo entregue.
-    $hero_image = 'https://images.unsplash.com/photo-1723530934765-063453910f35?fm=jpg&q=80&w=1800&auto=format&fit=crop';
+    $hero_image = 'https://images.unsplash.com/photo-1502602903514-eca7c59f29dc?fm=jpg&q=80&w=1800&auto=format&fit=crop';
 
     $manifest_stats = [
       ['label' => 'Route', 'value' => 'Eastern OR + WA Tri-Cities'],
@@ -40,7 +40,7 @@ get_header(); ?>
 
     // Orden = prioridad real del brief: agricultura encabeza la ruta.
     $industries = [
-      ['title' => 'Agriculture & Ranching', 'copy' => 'Clean units and handwash stations to keep crews going through the season — reliable service and fast response when it matters most.', 'priority' => true, 'image' => 'https://images.unsplash.com/photo-1761839257961-4dce65b72d99?fm=jpg&q=80&w=1200&auto=format&fit=crop'],
+      ['title' => 'Agriculture & Ranching', 'copy' => 'Clean units and handwash stations to keep crews going through the season — reliable service and fast response when it matters most.', 'priority' => true, 'image' => 'https://images.unsplash.com/photo-1775225057994-39efbc768100?fm=jpg&q=80&w=1200&auto=format&fit=crop'],
       ['title' => 'Construction', 'copy' => 'Job-site restrooms, ADA units, and recurring service with simple monthly billing.', 'priority' => false],
       ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, and parties — presentable units, trailers, and handwash stations for any crowd.', 'priority' => false],
       ['title' => 'School Districts', 'copy' => 'Extra capacity and event support for campuses and activities.', 'priority' => false],
