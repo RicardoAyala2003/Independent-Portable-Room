@@ -24,7 +24,8 @@ get_header(); ?>
         'anchor' => 'standard-portable-restrooms',
         'tag'    => '01',
         'title'  => 'Standard Portable Restrooms',
-        'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
+        // [FOTO — Pend. #D]
+        'image'  => 'https://images.unsplash.com/photo-1723530934765-063453910f35?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'   => "Clean, well-stocked units for daily use on farms, job sites, and events. Available in red, blue, pink, and gray. Regular servicing keeps every unit fresh.",
         'note'   => 'Medidas, capacidad y frecuencia de servicio exactas: Pend. #C.',
       ],
@@ -32,7 +33,7 @@ get_header(); ?>
         'anchor' => 'ada-accessible-units',
         'tag'    => '02',
         'title'  => 'ADA-Accessible Units',
-        'image'  => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg',
+        'image'  => 'https://images.unsplash.com/photo-1761839257961-4dce65b72d99?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'   => 'Spacious, ground-level units built for wheelchair access — a must for inclusive events and compliant job sites.',
         'note'   => 'Confirmar cumplimiento y medidas ADA exactas: Pend. #C.',
       ],
@@ -40,7 +41,7 @@ get_header(); ?>
         'anchor' => 'handwash-stations',
         'tag'    => '03',
         'title'  => 'Handwash Stations',
-        'image'  => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg',
+        'image'  => 'https://images.unsplash.com/photo-1723530934765-063453910f35?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'   => 'Internal, external, and separate standalone handwash stations — keep crews and guests clean and meet field-sanitation expectations.',
         'note'   => 'Diferencia interna/externa/separada + foto de cada una: Pend. #C / #D.',
       ],
@@ -48,7 +49,7 @@ get_header(); ?>
         'anchor' => 'restroom-trailers-doubles',
         'tag'    => '04',
         'title'  => 'Restroom Trailers & Doubles',
-        'image'  => '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg',
+        'image'  => 'https://images.unsplash.com/photo-1761839257961-4dce65b72d99?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'   => "Trailer-mounted options and two-stall doubles with separate men's and women's sides — a step up in comfort for weddings and larger events.",
         'note'   => 'Aclarar variantes (con/sin remolque; dobles boy/girl): Pend. #C.',
       ],
@@ -56,7 +57,7 @@ get_header(); ?>
         'anchor'    => 'emergency-service',
         'tag'       => '05',
         'title'     => 'Emergency Service',
-        'image'     => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg',
+        'image'     => 'https://images.unsplash.com/photo-1723530934765-063453910f35?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'      => 'Need a unit now? Our 24/7 line gets you covered fast, any day of the year.',
         'note'      => '',
         'emergency' => true,
@@ -65,7 +66,7 @@ get_header(); ?>
         'anchor' => 'flexible-rental-terms',
         'tag'    => '06',
         'title'  => 'Flexible Rental Terms',
-        'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
+        'image'  => 'https://images.unsplash.com/photo-1761839257961-4dce65b72d99?fm=jpg&q=80&w=1000&auto=format&fit=crop',
         'body'   => 'Daily, weekly, and monthly rentals — with delivery, servicing, and pickup handled for you.',
         'note'   => 'Modelo de precios/mínimos si aplica: Pend. #C.',
       ],
@@ -147,7 +148,7 @@ get_header(); ?>
   </section>
 
   <!-- 08 · FAQ -->
-  <section class="border-t-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-20 lg:py-24">
+  <section class="border-y-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-20 lg:py-24">
     <div class="mx-auto max-w-3xl px-4">
       <div class="ipr-reveal-up text-center">
         <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Manifest Q&amp;A</p>

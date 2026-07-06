@@ -128,7 +128,7 @@ get_header(); ?>
   </section>
 
   <!-- 03 · MAP -->
-  <section class="border-t-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-16 lg:py-20">
+  <section class="border-y-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-16 lg:py-20">
     <div class="mx-auto max-w-5xl px-4">
       <div class="ipr-reveal-up mx-auto max-w-2xl text-center">
         <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Route Overview</p>

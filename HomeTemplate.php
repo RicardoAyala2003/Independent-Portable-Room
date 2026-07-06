@@ -18,8 +18,9 @@ get_header(); ?>
 <main class="ipr-home bg-[var(--ipr-white)] text-[var(--ipr-ink)] overflow-hidden">
 
   <?php
-    $hero_video  = '/wp-content/uploads/2026/07/IPRHeroVideo.mp4';
-    $hero_poster = '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg';
+    // [FOTO/VIDEO — Pend. #D] Placeholder temporal (Unsplash License, libre de uso).
+    // Reemplazar por material real de campo cuando el cliente lo entregue.
+    $hero_image = 'https://images.unsplash.com/photo-1723530934765-063453910f35?fm=jpg&q=80&w=1800&auto=format&fit=crop';
 
     $manifest_stats = [
       ['label' => 'Route', 'value' => 'Eastern OR + WA Tri-Cities'],
@@ -39,7 +40,7 @@ get_header(); ?>
 
     // Orden = prioridad real del brief: agricultura encabeza la ruta.
     $industries = [
-      ['title' => 'Agriculture & Ranching', 'copy' => 'Clean units and handwash stations to keep crews going through the season — reliable service and fast response when it matters most.', 'priority' => true, 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
+      ['title' => 'Agriculture & Ranching', 'copy' => 'Clean units and handwash stations to keep crews going through the season — reliable service and fast response when it matters most.', 'priority' => true, 'image' => 'https://images.unsplash.com/photo-1761839257961-4dce65b72d99?fm=jpg&q=80&w=1200&auto=format&fit=crop'],
       ['title' => 'Construction', 'copy' => 'Job-site restrooms, ADA units, and recurring service with simple monthly billing.', 'priority' => false],
       ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, and parties — presentable units, trailers, and handwash stations for any crowd.', 'priority' => false],
       ['title' => 'School Districts', 'copy' => 'Extra capacity and event support for campuses and activities.', 'priority' => false],
@@ -65,16 +66,12 @@ get_header(); ?>
   <!-- 01 · HERO — encabezado de manifiesto de despacho -->
   <section class="ipr-bleed-under-nav relative flex min-h-[620px] w-full items-center overflow-hidden lg:min-h-[720px]">
     <div class="absolute inset-0">
-      <video
+      <!-- Cuando el cliente entregue video real, reemplazar este <img> por <video autoplay muted loop playsinline poster="..."><source src="..." type="video/mp4"></video> -->
+      <img
+        src="<?php echo esc_url($hero_image); ?>"
+        alt="Wheat field in the Columbia Basin, Eastern Oregon"
         class="h-full w-full object-cover"
-        poster="<?php echo esc_url($hero_poster); ?>"
-        autoplay
-        muted
-        loop
-        playsinline
       >
-        <source src="<?php echo esc_url($hero_video); ?>" type="video/mp4">
-      </video>
     </div>
     <div class="absolute inset-0 bg-[var(--ipr-ink)]/78"></div>
 
