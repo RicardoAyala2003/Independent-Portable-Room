@@ -40,22 +40,25 @@ function CTABand({
         .ipr-ctaband {
           position: relative;
           overflow: hidden;
-          background: var(--ipr-paper, #EAD9AF);
+          background: var(--ipr-ink, #10263B);
           padding: 4rem 1.5rem;
           text-align: center;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-image: linear-gradient(90deg, var(--ipr-yellow, #F3B200) 0%, var(--ipr-wheat, #C68A3D) 100%) 1;
         }
 
-        /* Estampado cruzado (rombos) — a propósito distinto del diagonal
-           simple que ya usan Industries/FAQ/Map, para que se note que es
-           una franja aparte aunque comparta el mismo tono de fondo. */
+        /* Estampado cruzado (rombos), mismo lenguaje visual que las demás
+           franjas oscuras del sitio (Marquee / Why Us) para que la banda
+           se lea como parte de la familia y no como un bloque suelto. */
         .ipr-ctaband__pattern {
           position: absolute;
           inset: 0;
           background-image:
-            repeating-linear-gradient(45deg, var(--ipr-ink, #10263B) 0, var(--ipr-ink, #10263B) 1.5px, transparent 1.5px, transparent 24px),
-            repeating-linear-gradient(-45deg, var(--ipr-ink, #10263B) 0, var(--ipr-ink, #10263B) 1.5px, transparent 1.5px, transparent 24px);
-          opacity: 0.07;
-          mix-blend-mode: multiply;
+            repeating-linear-gradient(45deg, var(--ipr-yellow, #F3B200) 0, var(--ipr-yellow, #F3B200) 1.5px, transparent 1.5px, transparent 24px),
+            repeating-linear-gradient(-45deg, var(--ipr-yellow, #F3B200) 0, var(--ipr-yellow, #F3B200) 1.5px, transparent 1.5px, transparent 24px);
+          opacity: 0.1;
+          mix-blend-mode: overlay;
           pointer-events: none;
         }
 
@@ -73,9 +76,9 @@ function CTABand({
           font-weight: 700;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: var(--ipr-wheat, #C68A3D);
+          color: var(--ipr-yellow, #F3B200);
           padding-bottom: 0.4rem;
-          border-bottom: 1px dashed rgba(16, 38, 59, 0.28);
+          border-bottom: 1px dashed rgba(254, 254, 254, 0.35);
         }
 
         .ipr-ctaband__heading {
@@ -86,7 +89,7 @@ function CTABand({
           text-transform: uppercase;
           letter-spacing: -0.01em;
           line-height: 1.15;
-          color: var(--ipr-ink, #10263B);
+          color: var(--ipr-white, #FEFEFE);
         }
 
         @media (min-width: 768px) {
@@ -98,7 +101,7 @@ function CTABand({
           font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
           font-size: 1rem;
           line-height: 1.6;
-          color: var(--ipr-steel, #59636B);
+          color: rgba(254, 254, 254, 0.78);
         }
 
         .ipr-ctaband__actions {
@@ -142,12 +145,12 @@ function CTABand({
         .ipr-ctaband__tab--yellow:hover { filter: brightness(1.08); }
 
         .ipr-ctaband__tab--ink {
-          background: var(--ipr-ink, #10263B);
+          background: rgba(254, 254, 254, 0.12);
           padding: 0;
         }
 
         .ipr-ctaband__tab--ink:hover {
-          filter: brightness(1.3);
+          background: rgba(254, 254, 254, 0.22);
         }
 
         .ipr-ctaband__tab-inner {
@@ -155,8 +158,11 @@ function CTABand({
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
-          padding: 1rem 2rem 1rem 1.5rem;
+          margin: 2px;
+          padding: calc(1rem - 2px) calc(2rem - 2px) calc(1rem - 2px) calc(1.5rem - 2px);
+          border: 2px solid rgba(254, 254, 254, 0.45);
           color: var(--ipr-white, #FEFEFE);
+          clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
         }
 
         @media (prefers-reduced-motion: reduce) {
