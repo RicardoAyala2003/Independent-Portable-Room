@@ -17,8 +17,7 @@ get_header(); ?>
 <main class="ipr-about bg-[var(--ipr-white)] text-[var(--ipr-ink)] overflow-hidden">
 
   <?php
-    // [FOTO — Pend. #D] Placeholder temporal. El brief pide foto del equipo/dueño o de la flota.
-    $about_image = 'https://images.unsplash.com/photo-1719535219245-10fc05a6eb04?fm=jpg&q=80&w=1800&auto=format&fit=crop';
+    $about_image = '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg';
 
     $mvv = [
       ['tag' => 'M', 'title' => 'Mission', 'copy' => 'To deliver quality service through clear communication and dependable customer care.'],

@@ -2,6 +2,7 @@ import Person from "./scripts/Person"
 import ExampleReactComponent from "./scripts/ExampleReactComponent"
 import Navbar from "./scripts/Navbar"
 import Footer from "./scripts/Footer"
+import CTABand from "./scripts/CTABand"
 import React from "react"
 import ReactDOM from "react-dom/client"
 
@@ -16,6 +17,22 @@ if (document.querySelector("#render-footer-here")) {
   const footerRoot = ReactDOM.createRoot(document.querySelector("#render-footer-here"))
   footerRoot.render(<Footer />)
 }
+
+// CTABand se repite en Home, Services, Service Area, About y Contact —
+// cada mount trae su propio copy vía data-attributes en el PHP.
+document.querySelectorAll(".ipr-cta-mount").forEach(function (mountEl) {
+  const root = ReactDOM.createRoot(mountEl)
+  root.render(
+    <CTABand
+      heading={mountEl.dataset.heading}
+      subtext={mountEl.dataset.subtext}
+      cta1Text={mountEl.dataset.cta1Text}
+      cta1Href={mountEl.dataset.cta1Href}
+      cta2Text={mountEl.dataset.cta2Text}
+      cta2Href={mountEl.dataset.cta2Href}
+    />
+  )
+})
 
 if (document.querySelector("#render-react-example-here")) {
   const root = ReactDOM.createRoot(document.querySelector("#render-react-example-here"))

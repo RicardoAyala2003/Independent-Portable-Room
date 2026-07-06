@@ -2,6 +2,202 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scripts/CTABand.js"
+/*!********************************!*\
+  !*** ./src/scripts/CTABand.js ***!
+  \********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function CTABand({
+  heading,
+  subtext,
+  cta1Text,
+  cta1Href,
+  cta2Text,
+  cta2Href
+}) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: "ipr-ctaband",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "ipr-ctaband__pattern",
+      "aria-hidden": "true"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "ipr-ctaband__inner",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "ipr-ctaband__eyebrow",
+        children: "Dispatch Ready"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        className: "ipr-ctaband__heading",
+        children: heading
+      }), subtext ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "ipr-ctaband__subtext",
+        children: subtext
+      }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "ipr-ctaband__actions",
+        children: [cta1Text && cta1Href ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          href: cta1Href,
+          className: "ipr-ctaband__tab ipr-ctaband__tab--yellow",
+          children: cta1Text
+        }) : null, cta2Text && cta2Href ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          href: cta2Href,
+          className: "ipr-ctaband__tab ipr-ctaband__tab--outline",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "ipr-ctaband__tab-inner",
+            children: cta2Text
+          })
+        }) : null]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+      children: `
+        .ipr-ctaband {
+          position: relative;
+          overflow: hidden;
+          background: var(--ipr-rust, #8B3A2B);
+          padding: 4rem 1.5rem;
+          text-align: center;
+        }
+
+        .ipr-ctaband__pattern {
+          position: absolute;
+          inset: 0;
+          background-image: repeating-linear-gradient(
+            135deg,
+            var(--ipr-yellow, #F3B200) 0,
+            var(--ipr-yellow, #F3B200) 2px,
+            transparent 2px,
+            transparent 30px
+          );
+          opacity: 0.08;
+          mix-blend-mode: overlay;
+          pointer-events: none;
+        }
+
+        .ipr-ctaband__inner {
+          position: relative;
+          z-index: 1;
+          max-width: 720px;
+          margin: 0 auto;
+        }
+
+        .ipr-ctaband__eyebrow {
+          display: inline-block;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 0.68rem;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: var(--ipr-yellow, #F3B200);
+          padding-bottom: 0.4rem;
+          border-bottom: 1px dashed rgba(254, 254, 254, 0.35);
+        }
+
+        .ipr-ctaband__heading {
+          margin-top: 1.1rem;
+          font-family: 'Oswald', 'Segoe UI', Arial, sans-serif;
+          font-size: 2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: -0.01em;
+          line-height: 1.15;
+          color: var(--ipr-white, #FEFEFE);
+        }
+
+        @media (min-width: 768px) {
+          .ipr-ctaband__heading { font-size: 2.6rem; }
+        }
+
+        .ipr-ctaband__subtext {
+          margin-top: 1rem;
+          font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+          font-size: 1rem;
+          line-height: 1.6;
+          color: rgba(254, 254, 254, 0.82);
+        }
+
+        .ipr-ctaband__actions {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+          .ipr-ctaband__actions { flex-direction: row; }
+        }
+
+        .ipr-ctaband__tab {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 1rem 2rem 1rem 1.5rem;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 0.82rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          text-decoration: none;
+          clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+          transition: transform .2s ease, filter .2s ease;
+        }
+
+        .ipr-ctaband__tab:hover {
+          transform: translateX(3px);
+        }
+
+        .ipr-ctaband__tab--yellow {
+          background: var(--ipr-yellow, #F3B200);
+          color: var(--ipr-ink, #10263B);
+        }
+
+        .ipr-ctaband__tab--yellow:hover { filter: brightness(1.08); }
+
+        /* Doble capa para que el borde siga la punta del clip-path completa */
+        .ipr-ctaband__tab--outline {
+          position: relative;
+          background: rgba(254, 254, 254, 0.4);
+          padding: 0;
+        }
+
+        .ipr-ctaband__tab--outline:hover {
+          background: rgba(254, 254, 254, 0.6);
+        }
+
+        .ipr-ctaband__tab-inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          margin: 1px;
+          padding: calc(1rem - 1px) calc(2rem - 1px) calc(1rem - 1px) calc(1.5rem - 1px);
+          background: rgba(8, 26, 44, 0.45);
+          color: var(--ipr-white, #FEFEFE);
+          clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .ipr-ctaband__tab { transition: none !important; }
+        }
+      `
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CTABand);
+
+/***/ },
+
 /***/ "./src/scripts/ExampleReactComponent.js"
 /*!**********************************************!*\
   !*** ./src/scripts/ExampleReactComponent.js ***!
@@ -521,12 +717,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
 /* harmony import */ var _scripts_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/Navbar */ "./src/scripts/Navbar.js");
 /* harmony import */ var _scripts_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/Footer */ "./src/scripts/Footer.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _scripts_CTABand__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/CTABand */ "./src/scripts/CTABand.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom/client */ "react-dom/client");
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_dom_client__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -536,16 +734,30 @@ __webpack_require__.r(__webpack_exports__);
 
 const person1 = new _scripts_Person__WEBPACK_IMPORTED_MODULE_0__["default"]("Brad");
 if (document.querySelector("#render-navbar-here")) {
-  const navbarRoot = react_dom_client__WEBPACK_IMPORTED_MODULE_5___default().createRoot(document.querySelector("#render-navbar-here"));
-  navbarRoot.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
+  const navbarRoot = react_dom_client__WEBPACK_IMPORTED_MODULE_6___default().createRoot(document.querySelector("#render-navbar-here"));
+  navbarRoot.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
 }
 if (document.querySelector("#render-footer-here")) {
-  const footerRoot = react_dom_client__WEBPACK_IMPORTED_MODULE_5___default().createRoot(document.querySelector("#render-footer-here"));
-  footerRoot.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
+  const footerRoot = react_dom_client__WEBPACK_IMPORTED_MODULE_6___default().createRoot(document.querySelector("#render-footer-here"));
+  footerRoot.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {}));
 }
+
+// CTABand se repite en Home, Services, Service Area, About y Contact —
+// cada mount trae su propio copy vía data-attributes en el PHP.
+document.querySelectorAll(".ipr-cta-mount").forEach(function (mountEl) {
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_6___default().createRoot(mountEl);
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_CTABand__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    heading: mountEl.dataset.heading,
+    subtext: mountEl.dataset.subtext,
+    cta1Text: mountEl.dataset.cta1Text,
+    cta1Href: mountEl.dataset.cta1Href,
+    cta2Text: mountEl.dataset.cta2Text,
+    cta2Href: mountEl.dataset.cta2Href
+  }));
+});
 if (document.querySelector("#render-react-example-here")) {
-  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_5___default().createRoot(document.querySelector("#render-react-example-here"));
-  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+  const root = react_dom_client__WEBPACK_IMPORTED_MODULE_6___default().createRoot(document.querySelector("#render-react-example-here"));
+  root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
 }
 
 // Reveal-on-scroll global — corre en cualquier página que tenga elementos
