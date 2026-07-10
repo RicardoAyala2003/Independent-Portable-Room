@@ -159,7 +159,7 @@ get_header(); ?>
             <a href="tel:+15414813111" class="ipr-contact-card__phone">
               <span class="ipr-contact-card__phone-label">Office</span>
               541-481-3111
-              <span class="ipr-contact-card__hours">Mon–Fri · hours TBD — Pend. #C</span>
+              <span class="ipr-contact-card__hours">Mon–Fri</span>
             </a>
 
             <a href="tel:+15417017369" class="ipr-contact-card__phone ipr-contact-card__phone--emergency">

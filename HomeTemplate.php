@@ -29,28 +29,30 @@ get_header(); ?>
     ];
 
     $services = [
-      ['tag' => '01', 'title' => 'Standard Restrooms', 'copy' => 'Clean, well-stocked units for daily use on farms, job sites, and events.', 'anchor' => '/services#standard-portable-restrooms'],
-      ['tag' => '02', 'title' => 'ADA Units', 'copy' => 'Ground-level, wheelchair-accessible units for inclusive events and compliant job sites.', 'anchor' => '/services#ada-accessible-units'],
-      ['tag' => '03', 'title' => 'Handwash Stations', 'copy' => 'Internal, external, and standalone stations for crews and guests.', 'anchor' => '/services#handwash-stations'],
-      ['tag' => '04', 'title' => 'Restroom Trailers & Doubles', 'copy' => 'Trailer-mounted units and two-stall doubles for weddings and larger events.', 'anchor' => '/services#restroom-trailers-doubles'],
-      ['tag' => '05', 'title' => 'Emergency Service', 'copy' => 'Need a unit now? Our 24/7 line gets you covered fast, any day of the year.', 'anchor' => '/services#emergency-service'],
-      ['tag' => '06', 'title' => 'Flexible Rental Terms', 'copy' => 'Daily, weekly, and monthly rentals — delivery, service, and pickup handled for you.', 'anchor' => '/services#flexible-rental-terms'],
+      ['tag' => '01', 'title' => 'Standard Restrooms', 'copy' => 'Clean, fully stocked porta potty rentals for daily use on farms, job sites, and events.', 'anchor' => '/services#standard-portable-restrooms', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
+      ['tag' => '02', 'title' => 'ADA Units', 'copy' => 'Ground-level, wheelchair-accessible restrooms with extra interior space and handrails.', 'anchor' => '/services#ada-accessible-units', 'image' => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg'],
+      ['tag' => '03', 'title' => 'Handwash Stations', 'copy' => 'Portable handwash station rentals with soap, fresh water, and paper towels.', 'anchor' => '/services#handwash-stations', 'image' => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg'],
+      ['tag' => '04', 'title' => 'Restroom Trailers & Doubles', 'copy' => 'Restroom trailers and two-stall doubles with running water, interior lighting, and a clean, comfortable experience.', 'anchor' => '/services#restroom-trailers-doubles', 'image' => '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg'],
+      ['tag' => '05', 'title' => 'Emergency Service', 'copy' => 'Our dispatch line runs 24/7 — call and a real person answers, with same-day delivery in most cases.', 'anchor' => '/services#emergency-service', 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
+      ['tag' => '06', 'title' => 'Flexible Rental Terms', 'copy' => 'Rent by the day, the weekend, the week, or the month — scale up or down as the job changes.', 'anchor' => '/services#flexible-rental-terms', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
     ];
+
+    $industries_bg = '/wp-content/uploads/2026/07/IndustriesBackground-scaled.webp';
 
     // Orden = prioridad real del brief: agricultura encabeza la ruta.
     $industries = [
-      ['title' => 'Agriculture & Ranching', 'copy' => 'Clean units and handwash stations to keep crews going through the season — reliable service and fast response when it matters most.', 'priority' => true, 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
-      ['title' => 'Construction', 'copy' => 'Job-site restrooms, ADA units, and recurring service with simple monthly billing.', 'priority' => false],
-      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, and parties — presentable units, trailers, and handwash stations for any crowd.', 'priority' => false],
-      ['title' => 'School Districts', 'copy' => 'Extra capacity and event support for campuses and activities.', 'priority' => false],
+      ['title' => 'Agriculture & Ranching', 'copy' => 'Harvest does not wait, and neither do we. We provide field-ready restrooms and handwash stations that keep your crews covered and your operation compliant with field sanitation standards. We understand crew sizes change week to week during the season, so we make adding or moving units fast and simple.', 'priority' => true, 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
+      ['title' => 'Construction', 'copy' => 'From single-home builds to commercial projects, we keep job sites compliant and crews taken care of. Standard units, ADA restrooms, and handwash stations delivered where the work is, serviced weekly, and billed monthly with simple invoicing your office will appreciate.', 'priority' => false],
+      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, county fairs, and community festivals. We help you calculate the right number of units for your guest count and event length, deliver before your setup day, and pick up after the last guest leaves.', 'priority' => false],
+      ['title' => 'School Districts', 'copy' => 'Athletic fields, campus renovations, graduation ceremonies, and outdoor school events. We work around school schedules, deliver during off-hours when needed, and keep every unit clean and stocked.', 'priority' => false],
     ];
 
     $why_values = [
-      ['title' => '15+ Yrs Local', 'copy' => 'We know the region and its seasons.'],
-      ['title' => '24/7 Dispatch', 'copy' => 'Call any time; we answer and show up.'],
-      ['title' => 'Full Fleet', 'copy' => 'Standard, ADA, handwash, trailers.'],
-      ['title' => 'Flexible Terms', 'copy' => 'Daily, weekly, or monthly.'],
-      ['title' => 'EN / ES', 'copy' => 'Bilingual service, start to finish.'],
+      ['title' => '15+ Yrs Local', 'copy' => 'We are based in Boardman and have run these routes for more than 15 years. We know the region, its roads, its seasons, and what harvest week actually looks like.'],
+      ['title' => '24/7 Dispatch', 'copy' => 'Call at 6am or 11pm. A real person answers, not a call center in another state, and a truck shows up.'],
+      ['title' => 'Full Fleet', 'copy' => 'Standard units, ADA restrooms, handwash stations, doubles, and trailers. Whatever the job needs, we own it and maintain it ourselves.'],
+      ['title' => 'Flexible Terms', 'copy' => 'Daily, weekly, or monthly rentals that flex with your project. No long contracts, no penalties for scaling down.'],
+      ['title' => 'EN / ES', 'copy' => 'Bilingual service from the first call to the last pickup. Your crew leads can call us directly in Spanish. Se habla español.'],
     ];
 
     $service_cities = [
@@ -84,21 +86,13 @@ get_header(); ?>
     </div>
 
     <div class="relative z-10 mx-auto w-full max-w-5xl px-4 py-20 text-center">
-      <p class="ipr-reveal-up ipr-stencil-eyebrow">
-        Dispatch Notice — Columbia Basin Service Route
-      </p>
-
-      <p class="ipr-reveal-up ipr-location-pin">
-        <span aria-hidden="true">📍</span> 207 NW First Street, Boardman, OR 97818
-      </p>
-
       <h1 class="ipr-reveal-up mt-6 font-[var(--ipr-display)] text-4xl font-bold uppercase leading-[1.04] tracking-[-0.01em] text-[var(--ipr-white)] md:text-6xl">
-        Clean Restrooms.<br>
+        Portable Restroom Rentals,<br>
         <span class="ipr-stencil-tilt">Delivered On Time.</span>
       </h1>
 
       <p class="ipr-reveal-up mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--ipr-white)]/82">
-        Locally trusted for 15+ years, serving farms, ranches, job sites, and events across Eastern Oregon and the Washington Tri-Cities.
+        Independent Portable Restrooms has served farms, ranches, job sites, and events across Eastern Oregon and the Washington Tri-Cities for more than 15 years. Clean units, scheduled service, and a 24/7 line answered by a local team that knows your area.
       </p>
 
       <div class="ipr-reveal-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -107,6 +101,10 @@ get_header(); ?>
           <span class="ipr-tab-outline__inner">Call 24/7 · 541-701-7369</span>
         </a>
       </div>
+
+      <p class="ipr-reveal-up mx-auto mt-8 max-w-2xl text-sm leading-6 text-[var(--ipr-white)]/70">
+        Whether you need one restroom for a weekend wedding, a full setup for harvest season, or long-term units for a construction project, we handle delivery, weekly cleaning, and pickup so you never have to think about it. One call, one local company, no runaround.
+      </p>
     </div>
   </section>
 
@@ -132,33 +130,38 @@ get_header(); ?>
   <section class="bg-[var(--ipr-white)] py-20 lg:py-24" style="--sec-bg: var(--ipr-white);">
     <div class="mx-auto max-w-7xl px-4">
       <div class="ipr-reveal-up mx-auto max-w-3xl text-center">
-        <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Service Tags</p>
         <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-5xl">
           Our Services
         </h2>
         <p class="mt-5 text-base leading-8 text-[var(--ipr-steel)]">
-          From a single unit for a weekend event to full sanitation for a job site or harvest crew.
+          Portable sanitation for every job, from a single restroom for a weekend event to complete setups for construction sites and harvest crews. Every rental includes delivery, routine cleaning, and pickup — no hidden fees, no surprises, just clean units that show up on time.
         </p>
       </div>
 
-      <div class="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <?php foreach ($services as $service) : ?>
-          <a href="<?php echo esc_url($service['anchor']); ?>" class="ipr-tag group block">
-            <span class="ipr-tag__eyelet"></span>
-            <span class="font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--ipr-wheat)]">
-              Tag No. <?php echo esc_html($service['tag']); ?>
-            </span>
-            <h3 class="mt-3 font-[var(--ipr-display)] text-xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
-              <?php echo esc_html($service['title']); ?>
-            </h3>
-            <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-steel)]">
-              <?php echo esc_html($service['copy']); ?>
-            </p>
-            <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--ipr-ink)] transition group-hover:gap-3">
-              Learn more →
-            </span>
-          </a>
-        <?php endforeach; ?>
+      <div class="ipr-carousel mt-14">
+        <button type="button" class="ipr-carousel__btn ipr-carousel__btn--prev" aria-label="Previous services">‹</button>
+
+        <div class="ipr-carousel__track">
+          <?php foreach ($services as $service) : ?>
+            <a href="<?php echo esc_url($service['anchor']); ?>" class="ipr-tag ipr-carousel__item group block">
+              <span class="ipr-tag__eyelet"></span>
+              <div class="ipr-tag__media">
+                <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>" loading="lazy">
+              </div>
+              <h3 class="mt-4 font-[var(--ipr-display)] text-xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
+                <?php echo esc_html($service['title']); ?>
+              </h3>
+              <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-steel)]">
+                <?php echo esc_html($service['copy']); ?>
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--ipr-ink)] transition group-hover:gap-3">
+                Learn more →
+              </span>
+            </a>
+          <?php endforeach; ?>
+        </div>
+
+        <button type="button" class="ipr-carousel__btn ipr-carousel__btn--next" aria-label="Next services">›</button>
       </div>
 
       <div class="ipr-reveal-up mt-12 text-center">
@@ -168,22 +171,22 @@ get_header(); ?>
   </section>
 
   <!-- 04 · INDUSTRIES — hoja de ruta / manifiesto de items -->
-  <section class="border-y-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-20 lg:py-24" style="--sec-bg: var(--ipr-paper);">
+  <section class="ipr-industries border-y-4 border-[var(--ipr-ink)] py-20 lg:py-24" style="--sec-bg: var(--ipr-paper); background-image: linear-gradient(rgba(16,38,59,0.5), rgba(16,38,59,0.5)), url('<?php echo esc_url($industries_bg); ?>'); background-size: cover; background-position: center;">
     <div class="mx-auto max-w-5xl px-4">
       <div class="ipr-reveal-up mx-auto max-w-3xl text-center">
-        <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Route Manifest</p>
-        <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-5xl">
+        <p class="ipr-stencil-eyebrow">Route Manifest</p>
+        <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)] md:text-5xl">
           Industries We Serve
         </h2>
+        <p class="mt-5 text-base leading-8 text-[var(--ipr-white)]/85" style="text-shadow: 0 1px 3px rgba(16,38,59,0.9), 0 2px 12px rgba(16,38,59,0.55);">
+          Eastern Oregon runs on agriculture, construction, and community. We built our routes and our fleet around the industries that keep this region working.
+        </p>
       </div>
 
-      <div class="mt-14 border-t-2 border-dashed border-[var(--ipr-steel)]/40">
+      <div class="mt-14 border-t-2 border-dashed border-[var(--ipr-white)]/30">
         <?php foreach ($industries as $i => $industry) : ?>
           <?php if ($industry['priority']) : ?>
             <article class="ipr-reveal-left ipr-manifest-row ipr-manifest-row--priority">
-              <div class="ipr-manifest-row__lead">
-                <span class="ipr-tab ipr-tab-yellow ipr-tab-sm">★ Priority Route</span>
-              </div>
               <div class="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
                 <div>
                   <h3 class="mt-3 font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
@@ -200,13 +203,13 @@ get_header(); ?>
             </article>
           <?php else : ?>
             <article class="ipr-reveal-stagger ipr-manifest-row">
-              <span class="font-mono text-xs font-bold text-[var(--ipr-wheat)]"><?php printf('%02d', $i + 1); ?></span>
+              <span class="font-mono text-xs font-bold text-[var(--ipr-yellow)]"><?php printf('%02d', $i + 1); ?></span>
               <div class="ipr-manifest-row__leader"></div>
               <div>
-                <h3 class="font-[var(--ipr-display)] text-lg font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
+                <h3 class="font-[var(--ipr-display)] text-lg font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)]">
                   <?php echo esc_html($industry['title']); ?>
                 </h3>
-                <p class="mt-1.5 text-sm leading-6 text-[var(--ipr-steel)]">
+                <p class="mt-1.5 text-sm leading-6 text-[var(--ipr-white)]/85">
                   <?php echo esc_html($industry['copy']); ?>
                 </p>
               </div>
@@ -225,15 +228,18 @@ get_header(); ?>
         <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)] md:text-5xl">
           Why Independent Portable Restrooms
         </h2>
+        <p class="mt-5 text-base leading-8 text-[var(--ipr-white)]/75">
+          Plenty of companies rent portable restrooms. Here is why farms, contractors, and event planners across two states keep calling us instead.
+        </p>
       </div>
 
-      <div class="mt-14 flex flex-wrap justify-center gap-8">
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
         <?php foreach ($why_values as $i => $value) : ?>
-          <div class="ipr-reveal-stagger ipr-stamp" style="--tilt: <?php echo esc_attr($i % 2 === 0 ? '-3deg' : '2.5deg'); ?>;">
-            <h3 class="font-[var(--ipr-display)] text-sm font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)]">
+          <div class="ipr-reveal-stagger ipr-stamp" style="--tilt: <?php echo esc_attr($i % 2 === 0 ? '-1.5deg' : '1.2deg'); ?>; --pulse-delay: <?php echo esc_attr($i * 350); ?>ms;">
+            <h3 class="font-[var(--ipr-display)] text-base font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)]">
               <?php echo esc_html($value['title']); ?>
             </h3>
-            <p class="mt-1.5 text-xs leading-5 text-[var(--ipr-white)]/70">
+            <p class="mt-2.5 text-sm leading-6 text-[var(--ipr-white)]/70">
               <?php echo esc_html($value['copy']); ?>
             </p>
           </div>
@@ -266,7 +272,7 @@ get_header(); ?>
             Where We Serve
           </h2>
           <p class="mt-5 text-base leading-8 text-[var(--ipr-steel)]">
-            Based in Boardman, OR — dispatching across Eastern Oregon and the Washington Tri-Cities.
+            Independent Portable Restrooms is based in Boardman, Oregon, and delivers across Eastern Oregon and the Washington Tri-Cities. Our regular routes cover Hermiston, Pendleton, Umatilla, Irrigon, Stanfield, Echo, Heppner, and Ione on the Oregon side, and Kennewick, Pasco, and Richland in Washington. Because we run these roads every week, delivery is fast and service days are consistent.
           </p>
 
           <div class="mt-8 grid grid-cols-2 gap-8">
@@ -288,8 +294,8 @@ get_header(); ?>
             </div>
           </div>
 
-          <p class="mt-8 text-sm font-bold uppercase tracking-[0.02em] text-[var(--ipr-steel)]">
-            Don't see your town? Call us — we may still cover you.
+          <p class="mt-8 text-sm leading-6 text-[var(--ipr-steel)]">
+            Don't see your town on the route? Call us anyway. Our coverage extends beyond the towns listed here, and if your site is reachable from our routes, we can likely serve it.
           </p>
         </div>
 
@@ -347,8 +353,8 @@ get_header(); ?>
   <!-- 08 · CTA BAND (componente React reutilizable) -->
   <div
     class="ipr-cta-mount"
-    data-heading="Need coverage for your farm, job site, or event?"
-    data-subtext="Get a fast quote or call our dispatch line any time."
+    data-heading="One Call. Clean Units. On Time."
+    data-subtext="From a single porta potty to a full harvest-season setup, Independent Portable Restrooms delivers clean, reliable portable sanitation across Eastern Oregon and the Tri-Cities. Family-operated, locally based, and answering the phone 24/7 for over 15 years."
     data-cta1-text="Request a Quote"
     data-cta1-href="/contact"
     data-cta2-text="Call 24/7 · 541-701-7369"
@@ -373,18 +379,6 @@ get_header(); ?>
     --sec-bg: var(--ipr-white);
 
     font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
-  }
-
-  .ipr-location-pin {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.9rem;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: rgba(254, 254, 254, 0.82);
   }
 
   /* ── Stamped diagonal pattern with parallax scroll ── */
@@ -618,13 +612,108 @@ get_header(); ?>
     transform: translateY(-50%);
   }
 
+  .ipr-tag__media {
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    border: 2px solid var(--ipr-ink);
+  }
+
+  .ipr-tag__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s ease;
+  }
+
+  .ipr-tag:hover .ipr-tag__media img {
+    transform: scale(1.05);
+  }
+
+  /* ── Services carousel ── */
+  .ipr-carousel {
+    position: relative;
+  }
+
+  .ipr-carousel__track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0.25rem 0.25rem 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ipr-wheat) transparent;
+  }
+
+  .ipr-carousel__track::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .ipr-carousel__track::-webkit-scrollbar-thumb {
+    background: var(--ipr-wheat);
+  }
+
+  .ipr-carousel__item {
+    flex: 0 0 auto;
+    width: 78%;
+    scroll-snap-align: start;
+  }
+
+  @media (min-width: 640px) {
+    .ipr-carousel__item { width: 340px; }
+  }
+
+  .ipr-carousel__btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: var(--ipr-ink);
+    color: var(--ipr-white);
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+    transition: filter .2s ease;
+  }
+
+  .ipr-carousel__btn:hover {
+    filter: brightness(1.3);
+  }
+
+  .ipr-carousel__btn--prev { left: -14px; }
+  .ipr-carousel__btn--next { right: -14px; }
+
+  @media (min-width: 900px) {
+    .ipr-carousel__btn { display: flex; }
+  }
+
+  .ipr-industries h2 {
+    text-shadow: 0 2px 12px rgba(16, 38, 59, 0.6);
+  }
+
   /* ── Manifest / route rows ── */
   .ipr-manifest-row {
     display: flex;
     align-items: flex-start;
     gap: 1.25rem;
     padding: 1.5rem 0;
-    border-bottom: 2px dashed rgba(16, 38, 59, 0.22);
+    border-bottom: 2px dashed rgba(254, 254, 254, 0.28);
+  }
+
+  /* Texto claro + sombra oscura (en vez de aclarar el fondo) para que se
+     lea bien sobre la foto, sin taparla con un overlay fuerte. */
+  .ipr-manifest-row:not(.ipr-manifest-row--priority) h3,
+  .ipr-manifest-row:not(.ipr-manifest-row--priority) p,
+  .ipr-manifest-row:not(.ipr-manifest-row--priority) > span {
+    text-shadow: 0 1px 3px rgba(16, 38, 59, 0.9), 0 2px 12px rgba(16, 38, 59, 0.55);
   }
 
   .ipr-manifest-row--priority {
@@ -640,8 +729,6 @@ get_header(); ?>
   .ipr-manifest-row--priority h3 { color: var(--ipr-white); }
   .ipr-manifest-row--priority p { color: rgba(254, 254, 254, 0.78); }
 
-  .ipr-manifest-row__lead { margin-bottom: 0.25rem; }
-
   .ipr-manifest-row__leader {
     flex: 1 1 auto;
     display: none;
@@ -656,17 +743,35 @@ get_header(); ?>
 
   /* ── Approval stamps ── */
   .ipr-stamp {
-    width: 180px;
     text-align: center;
-    padding: 1.25rem 0.75rem;
+    padding: 1.75rem 1.5rem;
     border: 2px dashed var(--ipr-wheat);
-    border-radius: 50%;
-    aspect-ratio: 1 / 1;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: rotate(var(--tilt, 0deg));
+    cursor: default;
+    transition: transform .4s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, border-style .2s ease, border-color .2s ease;
+  }
+
+  .ipr-stamp:hover {
+    transform: rotate(0deg) scale(1.08);
+    border-style: solid;
+    border-color: var(--ipr-yellow);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    animation-play-state: paused;
+  }
+
+  /* Pulso continuo en amarillo para que los stamps destaquen incluso sin
+     interacción — no solo al pasar el mouse. */
+  @keyframes ipr-stamp-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 rgba(243, 178, 0, 0);
+    }
+    50% {
+      box-shadow: 0 0 0 3px rgba(243, 178, 0, 0.18), 0 0 26px rgba(243, 178, 0, 0.45);
+    }
   }
 
   /* ── Reveal animations ── */
@@ -687,8 +792,22 @@ get_header(); ?>
     transform: translate(0, 0);
   }
 
-  @media (max-width: 640px) {
-    .ipr-stamp { width: 140px; }
+  /* Los stamps combinan la animación de reveal con su rotación --tilt y un
+     pequeño overshoot de escala (compound selector para ganarle en
+     especificidad a la regla genérica de arriba, que si no, pisa el rotate). */
+  .ipr-stamp.ipr-reveal-stagger {
+    transform: translateY(26px) scale(.6) rotate(0deg);
+    transition: opacity .5s ease, transform .55s cubic-bezier(.34, 1.56, .64, 1);
+  }
+
+  .ipr-stamp.ipr-reveal-stagger.is-visible {
+    transform: translateY(0) scale(1) rotate(var(--tilt, 0deg));
+    animation: ipr-stamp-pulse 3.4s ease-in-out infinite;
+    animation-delay: var(--pulse-delay, 0ms);
+  }
+
+  .ipr-stamp.ipr-reveal-stagger.is-visible:hover {
+    transform: rotate(0deg) scale(1.08);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -699,7 +818,8 @@ get_header(); ?>
       transition: none !important;
     }
 
-    .ipr-marquee__track {
+    .ipr-marquee__track,
+    .ipr-stamp {
       animation: none !important;
     }
   }
@@ -723,6 +843,24 @@ get_header(); ?>
     }, { threshold: 0.12 });
 
     items.forEach(function (item) { observer.observe(item); });
+
+    // Services carousel
+    document.querySelectorAll(".ipr-carousel").forEach(function (carousel) {
+      var track = carousel.querySelector(".ipr-carousel__track");
+      var prev = carousel.querySelector(".ipr-carousel__btn--prev");
+      var next = carousel.querySelector(".ipr-carousel__btn--next");
+      if (!track || !prev || !next) return;
+
+      function scrollByCard(direction) {
+        var card = track.querySelector(".ipr-carousel__item");
+        var gap = 24;
+        var amount = card ? card.getBoundingClientRect().width + gap : 300;
+        track.scrollBy({ left: direction * amount, behavior: "smooth" });
+      }
+
+      prev.addEventListener("click", function () { scrollByCard(-1); });
+      next.addEventListener("click", function () { scrollByCard(1); });
+    });
   });
 </script>
 

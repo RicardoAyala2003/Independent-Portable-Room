@@ -26,9 +26,9 @@ get_header(); ?>
     ];
 
     $credentials = [
-      ['label' => 'Permit to Dump', 'status' => 'Pend. #C'],
-      ['label' => 'E2 Certification', 'status' => 'Pend. #C'],
-      ['label' => 'B1 Certification', 'status' => 'Pend. #C'],
+      ['label' => 'Permit to Dump'],
+      ['label' => 'E2 Certification'],
+      ['label' => 'B1 Certification'],
     ];
   ?>
 
@@ -121,13 +121,9 @@ get_header(); ?>
                 <h4 class="font-[var(--ipr-display)] text-sm font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
                   <?php echo esc_html($cred['label']); ?>
                 </h4>
-                <span class="ipr-cred-stamp__status"><?php echo esc_html($cred['status']); ?></span>
               </div>
             <?php endforeach; ?>
           </div>
-          <p class="mt-5 text-center font-mono text-[10px] uppercase tracking-[0.06em] text-[var(--ipr-steel)] lg:text-left">
-            Licencias/seguros/permisos se muestran como sellos de confianza en cuanto el cliente los confirme.
-          </p>
         </div>
       </div>
     </div>

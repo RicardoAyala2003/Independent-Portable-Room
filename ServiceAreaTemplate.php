@@ -67,7 +67,7 @@ get_header(); ?>
       </h1>
 
       <p class="ipr-reveal-up mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--ipr-white)]/82">
-        Based in Boardman, OR, we deliver clean portable restrooms and handwash stations across Eastern Oregon and the Washington Tri-Cities.
+        Independent Portable Restrooms is based in Boardman, Oregon, and delivers across Eastern Oregon and the Washington Tri-Cities. Our regular routes cover Hermiston, Pendleton, Umatilla, Irrigon, Stanfield, Echo, Heppner, and Ione on the Oregon side, and Kennewick, Pasco, and Richland in Washington. Because we run these roads every week, delivery is fast and service days are consistent.
       </p>
     </div>
   </section>
@@ -120,10 +120,6 @@ get_header(); ?>
           </ul>
         </div>
       </div>
-
-      <p class="ipr-reveal-up mt-10 text-center font-mono text-xs uppercase tracking-[0.06em] text-[var(--ipr-wheat)]">
-        Agrupación por condado corregida — confirmar con el cliente antes de publicar. Pend. #B.
-      </p>
     </div>
   </section>
 
@@ -186,7 +182,7 @@ get_header(); ?>
       </div>
 
       <p class="ipr-reveal-up mt-4 text-center font-mono text-[11px] uppercase tracking-[0.06em] text-[var(--ipr-steel)]">
-        Illustrative route map — not to scale. Real Google Maps embed pending. Pend. #G.
+        Illustrative route map — not to scale.
       </p>
     </div>
   </section>
@@ -194,8 +190,8 @@ get_header(); ?>
   <!-- 04 · CTA BAND (componente React reutilizado del Home) -->
   <div
     class="ipr-cta-mount"
-    data-heading="Don't see your town?"
-    data-subtext="Call us — we may still cover your area."
+    data-heading="Don't see your town on the route?"
+    data-subtext="Call us anyway. Our coverage extends beyond the towns listed here, and if your site is reachable from our routes, we can likely serve it."
     data-cta1-text="Request a Quote"
     data-cta1-href="/contact"
     data-cta2-text="Call 24/7 · 541-701-7369"

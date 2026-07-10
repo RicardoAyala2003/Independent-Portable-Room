@@ -16,7 +16,7 @@
   --ipr-rust: #8B3A2B;
   --ipr-white: #FEFEFE;
   --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
-  --ipr-nav-h: 116px;
+  --ipr-nav-h: 152px;
 }
 
 @media (max-width: 1023px) {
@@ -129,7 +129,6 @@ body {
   z-index: 50;
   background: var(--ipr-ink);
   box-shadow: 0 8px 24px rgba(16, 38, 59, 0.18);
-  padding: 1.5rem 0;
 }
 
 .ipr-nav.is-scrolled {
@@ -152,10 +151,100 @@ body.admin-bar .ipr-nav {
 .ipr-nav__inner {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   Topbar — email, dirección y redes sociales.
+   Solo visible en desktop (>=1024px); en mobile/tablet
+   el header se mantiene compacto (burger menu).
+───────────────────────────────────────────────── */
+.ipr-topbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ipr-topbar {
+    display: block;
+    background: rgba(8, 20, 33, 0.92);
+    border-bottom: 1px solid rgba(254, 254, 254, 0.08);
+  }
+}
+
+.ipr-topbar__inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0.55rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ipr-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ipr-topbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(254, 254, 254, 0.72);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+
+.ipr-topbar__link:hover {
+  color: var(--ipr-yellow);
+}
+
+.ipr-topbar__address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(254, 254, 254, 0.85);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .2s ease;
+}
+
+.ipr-topbar__address:hover {
+  color: var(--ipr-yellow);
+}
+
+.ipr-topbar__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.ipr-topbar__social-link {
+  display: inline-flex;
+  color: rgba(254, 254, 254, 0.6);
+  transition: color .2s ease, transform .2s ease;
+}
+
+.ipr-topbar__social-link:hover {
+  color: var(--ipr-yellow);
+  transform: translateY(-1px);
 }
 
 .ipr-nav__brand {

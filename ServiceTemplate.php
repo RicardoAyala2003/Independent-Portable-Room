@@ -25,39 +25,39 @@ get_header(); ?>
         'tag'    => '01',
         'title'  => 'Standard Portable Restrooms',
         'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
-        'body'   => "Clean, well-stocked units for daily use on farms, job sites, and events. Available in red, blue, pink, and gray. Regular servicing keeps every unit fresh.",
-        'note'   => 'Medidas, capacidad y frecuencia de servicio exactas: Pend. #C.',
+        'body'   => "Clean, fully stocked porta potty rentals for daily use on farms, job sites, and events. Every unit arrives sanitized, stocked with toilet paper and hand sanitizer, and gets serviced on schedule for the length of your rental. It is the workhorse of our fleet and the right choice for most projects.",
+        'note'   => '',
       ],
       [
         'anchor' => 'ada-accessible-units',
         'tag'    => '02',
         'title'  => 'ADA-Accessible Units',
         'image'  => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg',
-        'body'   => 'Spacious, ground-level units built for wheelchair access — a must for inclusive events and compliant job sites.',
-        'note'   => 'Confirmar cumplimiento y medidas ADA exactas: Pend. #C.',
+        'body'   => 'Ground-level, wheelchair-accessible restrooms with extra interior space and handrails. They keep your public event inclusive, your job site ADA compliant, and your permits in order. We recommend at least one ADA unit for any event open to the public.',
+        'note'   => '',
       ],
       [
         'anchor' => 'handwash-stations',
         'tag'    => '03',
         'title'  => 'Handwash Stations',
         'image'  => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg',
-        'body'   => 'Internal, external, and separate standalone handwash stations — keep crews and guests clean and meet field-sanitation expectations.',
-        'note'   => 'Diferencia interna/externa/separada + foto de cada una: Pend. #C / #D.',
+        'body'   => 'Portable handwash station rentals with soap, fresh water, and paper towels. Available standalone or paired with any restroom unit. Essential for food events, required for agricultural crews, and always appreciated by guests.',
+        'note'   => '',
       ],
       [
         'anchor' => 'restroom-trailers-doubles',
         'tag'    => '04',
         'title'  => 'Restroom Trailers & Doubles',
         'image'  => '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg',
-        'body'   => "Trailer-mounted options and two-stall doubles with separate men's and women's sides — a step up in comfort for weddings and larger events.",
-        'note'   => 'Aclarar variantes (con/sin remolque; dobles boy/girl): Pend. #C.',
+        'body'   => "When the occasion calls for something nicer, our restroom trailers and two-stall doubles offer running water, interior lighting, and a clean, comfortable experience. Ideal for weddings, corporate events, and festivals where presentation matters as much as function.",
+        'note'   => '',
       ],
       [
         'anchor'    => 'emergency-service',
         'tag'       => '05',
         'title'     => 'Emergency Service',
         'image'     => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg',
-        'body'      => 'Need a unit now? Our 24/7 line gets you covered fast, any day of the year.',
+        'body'      => 'A unit breaks down, a crew doubles overnight, an inspector shows up tomorrow. It happens, and it is why our dispatch line runs 24/7, every day of the year. Call and a real person answers. In most cases we can deliver the same day.',
         'note'      => '',
         'emergency' => true,
       ],
@@ -66,16 +66,18 @@ get_header(); ?>
         'tag'    => '06',
         'title'  => 'Flexible Rental Terms',
         'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
-        'body'   => 'Daily, weekly, and monthly rentals — with delivery, servicing, and pickup handled for you.',
-        'note'   => 'Modelo de precios/mínimos si aplica: Pend. #C.',
+        'body'   => 'Rent by the day, the weekend, the week, or the month. Scale up during harvest or a project push, scale back down when the work slows. Delivery, scheduled service, and pickup are always handled by our team, so the only thing you manage is your job.',
+        'note'   => '',
       ],
     ];
 
     $faqs = [
-      ['q' => 'How many units do I need?', 'a' => '[Respuesta según guía del cliente — Pend. #C. La regla general depende de asistentes/crew y duración; se completa cuando confirmen su tabla de referencia.]'],
-      ['q' => 'How often are units serviced?', 'a' => '[Frecuencia exacta por tipo de renta — Pend. #C.]'],
-      ['q' => 'What areas do you deliver to?', 'a' => 'Eastern Oregon and the Washington Tri-Cities — see our full Service Area for the complete list of towns we cover.'],
-      ['q' => 'Do you handle emergencies?', 'a' => 'Yes, 24/7. Call 541-701-7369 any time, day or night.'],
+      ['q' => 'How fast can you deliver a portable restroom?', 'a' => 'For towns on our regular routes, we typically deliver within 24 to 48 hours. For emergencies, call our 24/7 line and we can usually deliver the same day. During peak season we recommend booking a few days ahead to guarantee your date.'],
+      ['q' => 'How often are the units serviced?', 'a' => 'Weekly service is standard on every rental and includes pumping, full cleaning, and restocking of toilet paper and sanitizer. High-traffic sites and large crews can schedule service two or more times per week. You never have to request it; it is on our route automatically.'],
+      ['q' => 'What areas do you cover?', 'a' => 'We serve Eastern Oregon and the Washington Tri-Cities, including Boardman, Hermiston, Pendleton, Umatilla, Irrigon, Stanfield, Kennewick, Pasco, and Richland. If your town is not listed, call us. We often serve sites beyond our listed route.'],
+      ['q' => 'How many units do I need for my event or job site?', 'a' => 'A general rule is one unit per 50 to 75 guests for a 4-hour event, or one unit per 10 workers on a job site per standard guidelines. Tell us your numbers and we will size it exactly, including ADA and handwash requirements.'],
+      ['q' => 'Do you offer restrooms for agricultural crews?', 'a' => 'Yes. Field crews are a core part of our business. We provide restrooms and handwash stations positioned where your crews work, with service that keeps you compliant with field sanitation requirements, and we respond fast when crew sizes change mid-season.'],
+      ['q' => 'How do I get a quote?', 'a' => 'Call or text 541-701-7369, or send a request through our contact page. Tell us the location, dates, and how many people, and we will quote you the same day. English or Spanish, whichever you prefer.'],
     ];
   ?>
 
@@ -96,7 +98,7 @@ get_header(); ?>
       </h1>
 
       <p class="ipr-reveal-up mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--ipr-white)]/82">
-        Standard units, ADA-accessible restrooms, handwash stations, and restroom trailers — delivered, serviced, and picked up, on the schedule you need.
+        Portable sanitation for every job, from a single restroom for a weekend event to complete setups for construction sites and harvest crews. Every rental includes delivery, routine cleaning, and pickup. No hidden fees, no surprises, just clean units that show up on time and stay serviced for as long as you need them.
       </p>
 
       <div class="ipr-reveal-up mt-8">
@@ -143,6 +145,21 @@ get_header(); ?>
           </div>
         </article>
       <?php endforeach; ?>
+    </div>
+  </section>
+
+  <!-- 07b · CIERRE DE SECCIÓN -->
+  <section class="border-y-2 border-[var(--ipr-ink)] bg-[var(--ipr-ink)] py-14">
+    <div class="mx-auto max-w-2xl px-4 text-center">
+      <p class="font-[var(--ipr-display)] text-lg font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)] md:text-xl">
+        Not sure what your site or event needs?
+      </p>
+      <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-white)]/78">
+        Call us and describe the job. We will tell you exactly how many units, which types, and what it will cost. Straight answers from people who have done this for 15 years.
+      </p>
+      <div class="mt-6">
+        <a href="tel:+15417017369" class="ipr-tab ipr-tab-yellow">Call 541-701-7369</a>
+      </div>
     </div>
   </section>
 
