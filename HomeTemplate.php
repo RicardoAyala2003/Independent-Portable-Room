@@ -41,10 +41,10 @@ get_header(); ?>
 
     // Orden = prioridad real del brief: agricultura encabeza la ruta.
     $industries = [
-      ['title' => 'Agriculture & Ranching', 'copy' => 'Harvest does not wait, and neither do we. We provide field-ready restrooms and handwash stations that keep your crews covered and your operation compliant with field sanitation standards. We understand crew sizes change week to week during the season, so we make adding or moving units fast and simple.', 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
-      ['title' => 'Construction', 'copy' => 'From single-home builds to commercial projects, we keep job sites compliant and crews taken care of. Standard units, ADA restrooms, and handwash stations delivered where the work is, serviced weekly, and billed monthly with simple invoicing your office will appreciate.', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
-      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, county fairs, and community festivals. We help you calculate the right number of units for your guest count and event length, deliver before your setup day, and pick up after the last guest leaves.', 'image' => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg'],
-      ['title' => 'School Districts', 'copy' => 'Athletic fields, campus renovations, graduation ceremonies, and outdoor school events. We work around school schedules, deliver during off-hours when needed, and keep every unit clean and stocked.', 'image' => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg'],
+      ['title' => 'Agriculture & Ranching', 'copy' => 'Harvest does not wait, and neither do we. We provide field-ready restrooms and handwash stations that keep your crews covered and your operation compliant with field sanitation standards. We understand crew sizes change week to week during the season, so we make adding or moving units fast and simple.', 'image' => '/wp-content/uploads/2026/07/four-blue-of-portable-bio-toilet-cabins-in-field-2026-03-20-00-14-32-utc.jpg-scaled.jpeg'],
+      ['title' => 'Construction', 'copy' => 'From single-home builds to commercial projects, we keep job sites compliant and crews taken care of. Standard units, ADA restrooms, and handwash stations delivered where the work is, serviced weekly, and billed monthly with simple invoicing your office will appreciate.', 'image' => '/wp-content/uploads/2026/07/portable-toilet-on-job-site-with-stacks-of-bricks-2026-03-25-02-18-51-utc.jpg-scaled.jpeg'],
+      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, county fairs, and community festivals. We help you calculate the right number of units for your guest count and event length, deliver before your setup day, and pick up after the last guest leaves.', 'image' => '/wp-content/uploads/2026/07/crowd-of-people-enjoying-an-outdoor-event-2026-03-17-07-13-42-utc.jpg-scaled.jpeg'],
+      ['title' => 'School Districts', 'copy' => 'Athletic fields, campus renovations, graduation ceremonies, and outdoor school events. We work around school schedules, deliver during off-hours when needed, and keep every unit clean and stocked.', 'image' => '/wp-content/uploads/2026/07/kalamazoo-michigan-usa-april-12-2014-a-grinn-2026-01-11-09-52-15-utc.jpg-scaled.jpeg'],
     ];
 
     $why_values = [
@@ -595,13 +595,14 @@ get_header(); ?>
     height: 170px;
     overflow: hidden;
     border: 2px solid var(--ipr-ink);
+    background: var(--ipr-white);
     transition: transform .4s cubic-bezier(.22, 1, .36, 1);
   }
 
   .ipr-tag__media img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform .3s ease;
   }
 

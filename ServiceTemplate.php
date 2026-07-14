@@ -113,7 +113,7 @@ get_header(); ?>
        derecha con animación al cambiar (mismo lenguaje de interacción que
        el selector de juegos de un dashboard de consola). -->
   <section class="bg-[var(--ipr-white)] py-16 lg:py-20">
-    <div class="mx-auto max-w-6xl px-4">
+    <div class="mx-auto max-w-[1600px] px-4 lg:px-8">
       <div class="ipr-console">
         <div class="ipr-console__list" role="tablist" aria-label="Our services">
           <div class="ipr-console__stamped" aria-hidden="true"></div>
@@ -356,12 +356,19 @@ get_header(); ?>
   .ipr-console {
     display: grid;
     grid-template-columns: 1fr;
-    border: 2px solid var(--ipr-ink);
+    overflow: hidden;
+    box-shadow: 0 40px 70px -28px rgba(16, 38, 59, 0.32), 0 8px 20px rgba(16, 38, 59, 0.08);
   }
 
   @media (min-width: 900px) {
     .ipr-console {
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 380px 1fr;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .ipr-console {
+      grid-template-columns: 420px 1fr;
     }
   }
 
@@ -431,8 +438,12 @@ get_header(); ?>
     height: 46px;
     flex-shrink: 0;
     overflow: hidden;
-    border: 2px solid rgba(254, 254, 254, 0.25);
-    transition: border-color .25s ease;
+    box-shadow: 0 0 0 2px rgba(254, 254, 254, 0.18);
+    transition: box-shadow .25s ease, transform .25s ease;
+  }
+
+  .ipr-console__row:hover .ipr-console__row-thumb {
+    transform: scale(1.05);
   }
 
   .ipr-console__row-thumb img {
@@ -447,7 +458,7 @@ get_header(); ?>
   }
 
   .ipr-console__row.is-active .ipr-console__row-thumb {
-    border-color: var(--ipr-yellow);
+    box-shadow: 0 0 0 2px var(--ipr-yellow);
   }
 
   .ipr-console__row-text {
@@ -504,6 +515,10 @@ get_header(); ?>
     background: var(--ipr-white);
   }
 
+  @media (min-width: 1280px) {
+    .ipr-console__detail { min-height: 520px; }
+  }
+
   .ipr-console__panel {
     display: none;
     padding: 2rem 1.75rem;
@@ -522,14 +537,37 @@ get_header(); ?>
     }
   }
 
+  @media (min-width: 1280px) {
+    .ipr-console__panel.is-active {
+      gap: 3rem;
+      padding: 3.5rem;
+    }
+  }
+
   .ipr-console__panel-media {
+    position: relative;
     height: 240px;
     overflow: hidden;
-    border: 2px solid var(--ipr-ink);
+    box-shadow: 0 24px 46px -18px rgba(16, 38, 59, 0.35);
+  }
+
+  /* Halo de color detrás de la foto — le da profundidad sin necesidad de
+     un borde duro alrededor. */
+  .ipr-console__panel-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(16, 38, 59, 0.08);
+    pointer-events: none;
   }
 
   @media (min-width: 640px) {
     .ipr-console__panel-media { height: 300px; }
+  }
+
+  @media (min-width: 1280px) {
+    .ipr-console__panel-media { height: 380px; }
   }
 
   .ipr-console__panel-media img {
