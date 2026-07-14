@@ -48,10 +48,77 @@ get_header(); ?>
       ['name' => 'Pasco',      'county' => 'Franklin County'],
       ['name' => 'Richland',   'county' => 'Benton County'],
     ];
+
+    $total_cities = count($or_cities) + count($wa_cities);
+
+    $area_stats = [
+      ['value' => '15+', 'label' => 'Years In The Region'],
+      ['value' => (string) $total_cities, 'label' => 'Cities Served'],
+      ['value' => '2', 'label' => 'States Licensed'],
+      ['value' => '24/7', 'label' => 'Emergency Response'],
+    ];
+
+    if (!function_exists('ipr_area_maps_embed_src')) {
+      function ipr_area_maps_embed_src($city, $state) {
+        return 'https://www.google.com/maps?q=' . rawurlencode("$city, $state") . '&output=embed';
+      }
+    }
+
+    if (!function_exists('ipr_area_maps_link')) {
+      function ipr_area_maps_link($city, $state) {
+        return 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode("$city, $state");
+      }
+    }
+
+    if (!function_exists('ipr_area_city_card')) {
+    function ipr_area_city_card($city, $state_label) {
+      ?>
+      <article class="ipr-city-card">
+        <div class="ipr-city-card__map">
+          <iframe
+            src="<?php echo esc_url(ipr_area_maps_embed_src($city['name'], $state_label)); ?>"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of <?php echo esc_attr($city['name']); ?>, <?php echo esc_attr($state_label); ?>"
+          ></iframe>
+          <a
+            href="<?php echo esc_url(ipr_area_maps_link($city['name'], $state_label)); ?>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ipr-city-card__maps-link"
+          >
+            Open in Maps ↗
+          </a>
+        </div>
+        <div class="ipr-city-card__body">
+          <p class="ipr-city-card__state"><?php echo esc_html(strtoupper($state_label)); ?></p>
+          <h3 class="ipr-city-card__name">
+            <?php echo esc_html($city['name']); ?>
+            <?php if (!empty($city['hq'])) : ?>
+              <span class="ipr-area-row__hq">HQ</span>
+            <?php endif; ?>
+          </h3>
+          <p class="ipr-city-card__meta">Restroom &amp; handwash rentals · 24/7 emergency</p>
+          <div class="ipr-city-card__actions">
+            <a href="/contact" class="ipr-tab ipr-tab-yellow ipr-tab-sm">Request a Quote</a>
+            <a href="tel:+15417017369" class="ipr-city-card__call">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z" />
+              </svg>
+              Call Now
+            </a>
+          </div>
+        </div>
+      </article>
+      <?php
+    }
+    }
   ?>
 
-  <!-- 01 · HERO INTERNO -->
-  <section class="relative flex min-h-[380px] w-full items-center overflow-hidden bg-[var(--ipr-ink)]">
+  <!-- 01 · HERO + TABS + STATS — una sola sección navy continua
+       (antes eran dos <section> azules separadas por una barra de acento,
+       lo que se leía como dos bloques pegados en vez de uno). -->
+  <section class="relative overflow-hidden bg-[var(--ipr-ink)]">
     <div class="ipr-stamped-area absolute inset-0"></div>
 
     <div class="ipr-ticket-stub" aria-hidden="true">
@@ -59,7 +126,7 @@ get_header(); ?>
       <strong><?php echo esc_html(date('ymd')); ?>-AREA</strong>
     </div>
 
-    <div class="relative z-10 mx-auto w-full max-w-3xl px-4 py-16 text-center">
+    <div class="relative z-10 mx-auto w-full max-w-3xl px-4 pt-16 pb-10 text-center">
       <p class="ipr-reveal-up ipr-stencil-eyebrow">Coverage Manifest · 11 Stops On File</p>
 
       <h1 class="ipr-reveal-up mt-5 font-[var(--ipr-display)] text-4xl font-bold uppercase leading-[1.05] tracking-[-0.01em] text-[var(--ipr-white)] md:text-5xl">
@@ -70,120 +137,87 @@ get_header(); ?>
         Independent Portable Restrooms is based in Boardman, Oregon, and delivers across Eastern Oregon and the Washington Tri-Cities. Our regular routes cover Hermiston, Pendleton, Umatilla, Irrigon, Stanfield, Echo, Heppner, and Ione on the Oregon side, and Kennewick, Pasco, and Richland in Washington. Because we run these roads every week, delivery is fast and service days are consistent.
       </p>
     </div>
-  </section>
 
-  <div class="ipr-accent-bar" aria-hidden="true"></div>
-
-  <!-- 02 · CITIES — manifiesto por condado -->
-  <section class="bg-[var(--ipr-white)] py-16 lg:py-20">
-    <div class="mx-auto max-w-4xl px-4">
-      <div class="ipr-reveal-up mx-auto max-w-2xl text-center">
-        <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Stops On Route</p>
-        <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-4xl">
-          Every Town We Cover
-        </h2>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 pb-12 lg:pb-14">
+      <div class="ipr-reveal-up ipr-area-tablist" role="tablist" aria-label="Service area regions">
+        <button type="button" class="ipr-area-tab is-active" data-panel="or" role="tab" aria-selected="true">
+          Oregon <span class="ipr-area-tab__count">(<?php echo count($or_cities); ?> cities)</span>
+        </button>
+        <button type="button" class="ipr-area-tab" data-panel="wa" role="tab" aria-selected="false">
+          Washington <span class="ipr-area-tab__count">(<?php echo count($wa_cities); ?> cities)</span>
+        </button>
+        <button type="button" class="ipr-area-tab" data-panel="all" role="tab" aria-selected="false">
+          All <?php echo esc_html($total_cities); ?> Cities
+        </button>
       </div>
 
-      <div class="mt-14 grid gap-10 md:grid-cols-2">
-        <div>
-          <div class="ipr-area-col-header">
-            <span class="ipr-area-flag">OR</span>
-            <span>Oregon</span>
+      <div class="ipr-area-stats mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+        <?php foreach ($area_stats as $i => $stat) : ?>
+          <div class="ipr-reveal-stagger ipr-area-stat">
+            <div class="ipr-area-stat__value-slot">
+              <?php if ($stat['value'] === '15+') : ?>
+                <div class="ipr-holo" aria-hidden="true">
+                  <span class="ipr-holo__layer ipr-holo__layer--back">15+</span>
+                  <span class="ipr-holo__layer ipr-holo__layer--mid">15+</span>
+                  <span class="ipr-holo__layer ipr-holo__layer--front">15+</span>
+                </div>
+                <span class="sr-only">15+</span>
+              <?php else : ?>
+                <div class="ipr-area-stat__value"><?php echo esc_html($stat['value']); ?></div>
+              <?php endif; ?>
+            </div>
+            <div class="ipr-area-stat__label"><?php echo esc_html($stat['label']); ?></div>
           </div>
-          <ul class="mt-5">
-            <?php foreach ($or_cities as $city) : ?>
-              <li class="ipr-reveal-stagger ipr-area-row">
-                <span class="ipr-area-row__name">
-                  <?php echo esc_html($city['name']); ?>
-                  <?php if (!empty($city['hq'])) : ?>
-                    <span class="ipr-area-row__hq">HQ</span>
-                  <?php endif; ?>
-                </span>
-                <span class="ipr-area-row__county"><?php echo esc_html($city['county']); ?></span>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-
-        <div>
-          <div class="ipr-area-col-header">
-            <span class="ipr-area-flag">WA</span>
-            <span>Washington · Tri-Cities</span>
-          </div>
-          <ul class="mt-5">
-            <?php foreach ($wa_cities as $city) : ?>
-              <li class="ipr-reveal-stagger ipr-area-row">
-                <span class="ipr-area-row__name"><?php echo esc_html($city['name']); ?></span>
-                <span class="ipr-area-row__county"><?php echo esc_html($city['county']); ?></span>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
 
-  <!-- 03 · MAP -->
-  <section class="border-t-4 border-[var(--ipr-ink)] bg-[var(--ipr-paper)] py-16 lg:py-20">
-    <div class="mx-auto max-w-5xl px-4">
-      <div class="ipr-reveal-up mx-auto max-w-2xl text-center">
-        <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Route Overview</p>
-        <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-4xl">
-          Where We Dispatch From
-        </h2>
+  <!-- 03 · CITY CARDS -->
+  <section class="bg-[var(--ipr-paper)] py-16 lg:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+
+      <div class="ipr-area-panel" data-panel="or">
+        <div class="ipr-area-panel__head">
+          <h2 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
+            Oregon
+          </h2>
+          <span class="ipr-area-panel__pill">📍 <?php echo count($or_cities); ?> Cities</span>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <?php foreach ($or_cities as $city) : ipr_area_city_card($city, 'Oregon'); ?>
+          <?php endforeach; ?>
+        </div>
       </div>
 
-      <div class="ipr-reveal-up mt-12 h-[420px] w-full border-2 border-[var(--ipr-ink)] bg-[var(--ipr-white)]">
-        <!-- [MAP — Pend. #G] Ilustración de ruta, no es un mapa geográfico real.
-             Reemplazar por embed real de Google Maps cuando el cliente confirme (207 NW First St, Boardman, OR). -->
-        <svg viewBox="0 0 700 420" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated service area map across the Columbia Basin">
-          <defs>
-            <pattern id="ipr-area-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#10263B" stroke-opacity="0.06" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect width="700" height="420" fill="url(#ipr-area-grid)" />
-
-          <!-- Divisoria OR / WA (ilustrativa) -->
-          <line x1="0" y1="150" x2="700" y2="150" stroke="#59636B" stroke-width="1" stroke-dasharray="4 6" />
-          <text x="16" y="30" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#59636B">WASHINGTON</text>
-          <text x="16" y="170" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#59636B">OREGON</text>
-
-          <!-- Ruta OR -->
-          <path d="M 80 340 C 140 300, 160 260, 220 250 S 320 280, 380 230 S 480 210, 560 190"
-                fill="none" stroke="#C68A3D" stroke-width="2.5" stroke-dasharray="7 7" />
-
-          <!-- HQ · Boardman -->
-          <circle cx="80" cy="340" r="9" fill="#F3B200" stroke="#10263B" stroke-width="2" />
-          <text x="96" y="337" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700" fill="#10263B">HQ · BOARDMAN — MORROW CO.</text>
-
-          <circle cx="220" cy="250" r="5" fill="#10263B" /><text x="230" y="247" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">IRRIGON — MORROW CO.</text>
-          <circle cx="150" cy="290" r="4" fill="#59636B" /><text x="30" y="300" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">HEPPNER — MORROW CO.</text>
-          <circle cx="380" cy="230" r="5" fill="#10263B" /><text x="390" y="227" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">HERMISTON — UMATILLA CO.</text>
-          <circle cx="480" cy="210" r="4" fill="#59636B" /><text x="490" y="207" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">UMATILLA — UMATILLA CO.</text>
-          <circle cx="560" cy="190" r="5" fill="#10263B" /><text x="570" y="187" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">PENDLETON — UMATILLA CO.</text>
-          <circle cx="40" cy="380" r="4" fill="#59636B" /><text x="16" y="405" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">ARLINGTON — GILLIAM CO.</text>
-
-          <!-- WA Tri-Cities -->
-          <circle cx="360" cy="90" r="5" fill="#10263B" /><text x="370" y="87" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">PLYMOUTH — BENTON CO.</text>
-          <circle cx="440" cy="70" r="5" fill="#10263B" /><text x="450" y="67" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">KENNEWICK — BENTON CO.</text>
-          <circle cx="500" cy="55" r="5" fill="#10263B" /><text x="510" y="52" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10263B">PASCO — FRANKLIN CO.</text>
-          <circle cx="470" cy="90" r="4" fill="#59636B" /><text x="480" y="105" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">RICHLAND — BENTON CO.</text>
-
-          <!-- Marca de rumbo -->
-          <g transform="translate(650, 370)">
-            <circle r="22" fill="none" stroke="#10263B" stroke-width="1.5" stroke-dasharray="3 4" />
-            <text x="0" y="-28" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#10263B">N</text>
-            <path d="M0 -14 L5 4 L0 -1 L-5 4 Z" fill="#F3B200" />
-          </g>
-
-          <text x="16" y="405" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="700" letter-spacing="2" fill="#C68A3D" text-anchor="start" dx="0"></text>
-        </svg>
+      <div class="ipr-area-panel" data-panel="wa" hidden>
+        <div class="ipr-area-panel__head">
+          <h2 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
+            Washington
+          </h2>
+          <span class="ipr-area-panel__pill">📍 <?php echo count($wa_cities); ?> Cities</span>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <?php foreach ($wa_cities as $city) : ipr_area_city_card($city, 'Washington'); ?>
+          <?php endforeach; ?>
+        </div>
       </div>
 
-      <p class="ipr-reveal-up mt-4 text-center font-mono text-[11px] uppercase tracking-[0.06em] text-[var(--ipr-steel)]">
-        Illustrative route map — not to scale.
-      </p>
+      <div class="ipr-area-panel" data-panel="all" hidden>
+        <div class="ipr-area-panel__head">
+          <h2 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
+            All Cities
+          </h2>
+          <span class="ipr-area-panel__pill">📍 <?php echo esc_html($total_cities); ?> Cities</span>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <?php foreach ($or_cities as $city) : ipr_area_city_card($city, 'Oregon'); ?>
+          <?php endforeach; ?>
+          <?php foreach ($wa_cities as $city) : ipr_area_city_card($city, 'Washington'); ?>
+          <?php endforeach; ?>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -245,12 +279,6 @@ get_header(); ?>
     padding-bottom: 0.1rem;
   }
 
-  .ipr-accent-bar {
-    height: 5px;
-    width: 100%;
-    background: linear-gradient(90deg, var(--ipr-yellow) 0%, var(--ipr-wheat) 100%);
-  }
-
   .ipr-stamped-area {
     background-image: repeating-linear-gradient(
       135deg,
@@ -283,54 +311,6 @@ get_header(); ?>
     border-bottom-color: rgba(16, 38, 59, 0.25);
   }
 
-  /* ── Columnas OR/WA con bandera de manifiesto ── */
-  .ipr-area-col-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-family: var(--ipr-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    color: var(--ipr-ink);
-    padding-bottom: 0.85rem;
-    border-bottom: 3px solid var(--ipr-ink);
-  }
-
-  .ipr-area-flag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 26px;
-    background: var(--ipr-yellow);
-    color: var(--ipr-ink);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-  }
-
-  .ipr-area-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.85rem 0;
-    border-bottom: 1px dashed rgba(16, 38, 59, 0.18);
-  }
-
-  .ipr-area-row__name {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--ipr-display);
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--ipr-ink);
-  }
-
   .ipr-area-row__hq {
     display: inline-flex;
     background: var(--ipr-yellow);
@@ -340,16 +320,350 @@ get_header(); ?>
     font-weight: 700;
     letter-spacing: 0.08em;
     padding: 0.1rem 0.4rem;
+    vertical-align: middle;
   }
 
-  .ipr-area-row__county {
+  /* ── Region tabs (Oregon / Washington / All cities) ── */
+  .ipr-area-tablist {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(254, 254, 254, 0.16);
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .ipr-area-tab {
+    position: relative;
+    padding: 0 0 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(254, 254, 254, 0.5);
+    white-space: nowrap;
+    transition: color .2s ease, transform .2s ease;
+  }
+
+  .ipr-area-tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--ipr-yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .ipr-area-tab:hover {
+    color: rgba(254, 254, 254, 0.85);
+    transform: translateY(-1px);
+  }
+
+  .ipr-area-tab:hover::after {
+    transform: scaleX(1);
+    background: rgba(243, 178, 0, 0.35);
+  }
+
+  .ipr-area-tab.is-active {
+    color: var(--ipr-white);
+  }
+
+  .ipr-area-tab.is-active::after {
+    transform: scaleX(1);
+    background: var(--ipr-yellow);
+  }
+
+  .ipr-area-tab__count {
+    color: rgba(254, 254, 254, 0.45);
+    font-weight: 500;
+  }
+
+  /* ── Stats ── */
+  .ipr-area-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform .3s ease;
+  }
+
+  .ipr-area-stat:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Altura fija compartida por el valor normal y el holo, para que las
+     etiquetas ("YEARS IN THE REGION", "CITIES SERVED"...) queden todas
+     alineadas en la misma línea sin importar cuál stat es más alto. */
+  .ipr-area-stat__value-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.6rem;
+  }
+
+  .ipr-area-stat__value {
+    font-family: var(--ipr-display);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--ipr-yellow);
+    line-height: 1;
+  }
+
+  /* ── Efecto holográfico 3D — reservado para el stat "15+" ── */
+  .ipr-holo {
+    position: relative;
+    width: 76px;
+    height: 100%;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: ipr-holo-wobble 6.2s ease-in-out infinite;
+  }
+
+  @keyframes ipr-holo-wobble {
+    0%   { transform: rotateX(16deg) rotateY(-18deg); }
+    50%  { transform: rotateX(18deg) rotateY(18deg); }
+    100% { transform: rotateX(16deg) rotateY(-18deg); }
+  }
+
+  .ipr-holo__layer {
+    position: absolute;
+    font-family: var(--ipr-display);
+    font-weight: 800;
+    font-size: 2.25rem;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    -webkit-text-stroke: 1px rgba(243, 178, 0, 0.7);
+    background: linear-gradient(
+      90deg,
+      rgba(243, 178, 0, 0.18) 0%,
+      rgba(243, 178, 0, 0.95) 35%,
+      rgba(255, 214, 102, 0.8) 60%,
+      rgba(243, 178, 0, 0.22) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+    opacity: 0.95;
+    transform-style: preserve-3d;
+  }
+
+  .ipr-holo__layer--back {
+    opacity: 0.18;
+    filter: blur(1px);
+    transform: translateZ(-36px);
+    -webkit-text-stroke: 1px rgba(243, 178, 0, 0.45);
+  }
+
+  .ipr-holo__layer--mid {
+    opacity: 0.42;
+    filter: blur(0.4px);
+    transform: translateZ(-18px);
+    -webkit-text-stroke: 1px rgba(243, 178, 0, 0.55);
+  }
+
+  .ipr-holo__layer--front {
+    opacity: 0.98;
+    transform: translateZ(0);
+    -webkit-text-stroke: 1px rgba(243, 178, 0, 0.78);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-holo { animation: none !important; }
+  }
+
+  .ipr-area-stat__label {
+    margin-top: 0.5rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(254, 254, 254, 0.65);
+  }
+
+  @media (min-width: 640px) {
+    .ipr-area-stat { align-items: flex-start; text-align: left; }
+    .ipr-area-stat__value-slot { justify-content: flex-start; }
+  }
+
+  /* ── Region panels ── */
+  .ipr-area-panel + .ipr-area-panel {
+    margin-top: 3rem;
+  }
+
+  .ipr-area-panel__head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(16, 38, 59, 0.16);
+    animation: ipr-card-pop .5s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-area-panel__head { animation: none !important; }
+  }
+
+  .ipr-area-panel__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(16, 38, 59, 0.08);
+    transition: background .2s ease, transform .2s ease;
+    border-radius: 999px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: var(--ipr-ink);
+  }
+
+  /* ── City cards ──
+     La animación de entrada usa @keyframes (no transition) para que se
+     vuelva a disparar cada vez que un panel pasa de hidden a visible al
+     cambiar de tab — togglear [hidden] recrea el layout y reinicia
+     cualquier animation en curso. */
+  .ipr-city-card {
+    background: var(--ipr-white);
+    border: 2px solid var(--ipr-ink);
+    overflow: hidden;
+    animation: ipr-card-pop .5s cubic-bezier(.22, 1, .36, 1) both;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .ipr-city-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ipr-yellow);
+    box-shadow: 0 16px 30px rgba(16, 38, 59, 0.18);
+  }
+
+  @keyframes ipr-card-pop {
+    from { opacity: 0; transform: translateY(18px) scale(.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .ipr-area-panel .ipr-city-card:nth-child(1) { animation-delay: 0ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(2) { animation-delay: 70ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(3) { animation-delay: 140ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(4) { animation-delay: 210ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(5) { animation-delay: 280ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(6) { animation-delay: 350ms; }
+  .ipr-area-panel .ipr-city-card:nth-child(n+7) { animation-delay: 420ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-city-card { animation: none !important; }
+  }
+
+  .ipr-city-card__map {
+    position: relative;
+    height: 170px;
+    overflow: hidden;
+  }
+
+  .ipr-city-card__map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    transition: transform .4s ease;
+  }
+
+  .ipr-city-card:hover .ipr-city-card__map iframe {
+    transform: scale(1.06);
+  }
+
+  .ipr-city-card__maps-link {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.6rem;
+    background: var(--ipr-white);
+    color: var(--ipr-ink);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(16, 38, 59, 0.25);
+    transition: background .2s ease;
+  }
+
+  .ipr-city-card__maps-link:hover {
+    background: var(--ipr-yellow);
+  }
+
+  .ipr-city-card__body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .ipr-city-card__state {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--ipr-wheat);
-    white-space: nowrap;
+  }
+
+  .ipr-city-card__name {
+    margin-top: 0.3rem;
+    font-family: var(--ipr-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--ipr-ink);
+  }
+
+  .ipr-city-card__meta {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--ipr-steel);
+  }
+
+  .ipr-city-card__actions {
+    margin-top: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ipr-city-card__call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ipr-ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ipr-ink);
+    padding-bottom: 0.1rem;
+    transition: color .2s ease, border-color .2s ease;
+  }
+
+  .ipr-city-card__call:hover {
+    color: var(--ipr-wheat);
+    border-color: var(--ipr-wheat);
   }
 
   /* ── Tabs (reutilizados de otras páginas) ── */
@@ -419,6 +733,26 @@ get_header(); ?>
     }, { threshold: 0.12 });
 
     items.forEach(function (item) { observer.observe(item); });
+
+    // Region tabs (Oregon / Washington / All cities)
+    var tabs = document.querySelectorAll(".ipr-area-tab");
+    var panels = document.querySelectorAll(".ipr-area-panel");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var target = tab.getAttribute("data-panel");
+
+        tabs.forEach(function (otherTab) {
+          var isActive = otherTab === tab;
+          otherTab.classList.toggle("is-active", isActive);
+          otherTab.setAttribute("aria-selected", String(isActive));
+        });
+
+        panels.forEach(function (panel) {
+          panel.hidden = panel.getAttribute("data-panel") !== target;
+        });
+      });
+    });
   });
 </script>
 

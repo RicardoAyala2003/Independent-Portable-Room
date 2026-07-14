@@ -24,7 +24,7 @@ get_header(); ?>
         'anchor' => 'standard-portable-restrooms',
         'tag'    => '01',
         'title'  => 'Standard Portable Restrooms',
-        'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
+        'image'  => '/wp-content/uploads/2026/07/IMG_5611-e1784000646694.jpeg',
         'body'   => "Clean, fully stocked porta potty rentals for daily use on farms, job sites, and events. Every unit arrives sanitized, stocked with toilet paper and hand sanitizer, and gets serviced on schedule for the length of your rental. It is the workhorse of our fleet and the right choice for most projects.",
         'note'   => '',
       ],
@@ -32,7 +32,7 @@ get_header(); ?>
         'anchor' => 'ada-accessible-units',
         'tag'    => '02',
         'title'  => 'ADA-Accessible Units',
-        'image'  => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg',
+        'image'  => '/wp-content/uploads/2026/07/IMG_5610-e1784000682769.jpeg',
         'body'   => 'Ground-level, wheelchair-accessible restrooms with extra interior space and handrails. They keep your public event inclusive, your job site ADA compliant, and your permits in order. We recommend at least one ADA unit for any event open to the public.',
         'note'   => '',
       ],
@@ -40,7 +40,7 @@ get_header(); ?>
         'anchor' => 'handwash-stations',
         'tag'    => '03',
         'title'  => 'Handwash Stations',
-        'image'  => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg',
+        'image'  => '/wp-content/uploads/2026/07/IMG_5608-e1784000794154.jpeg',
         'body'   => 'Portable handwash station rentals with soap, fresh water, and paper towels. Available standalone or paired with any restroom unit. Essential for food events, required for agricultural crews, and always appreciated by guests.',
         'note'   => '',
       ],
@@ -48,7 +48,7 @@ get_header(); ?>
         'anchor' => 'restroom-trailers-doubles',
         'tag'    => '04',
         'title'  => 'Restroom Trailers & Doubles',
-        'image'  => '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg',
+        'image'  => '/wp-content/uploads/2026/07/IMG_5609-e1784000713881.jpeg',
         'body'   => "When the occasion calls for something nicer, our restroom trailers and two-stall doubles offer running water, interior lighting, and a clean, comfortable experience. Ideal for weddings, corporate events, and festivals where presentation matters as much as function.",
         'note'   => '',
       ],
@@ -56,7 +56,7 @@ get_header(); ?>
         'anchor'    => 'emergency-service',
         'tag'       => '05',
         'title'     => 'Emergency Service',
-        'image'     => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg',
+        'image'     => '/wp-content/uploads/2026/07/IMG_5611-e1784000646694.jpeg',
         'body'      => 'A unit breaks down, a crew doubles overnight, an inspector shows up tomorrow. It happens, and it is why our dispatch line runs 24/7, every day of the year. Call and a real person answers. In most cases we can deliver the same day.',
         'note'      => '',
         'emergency' => true,
@@ -65,7 +65,7 @@ get_header(); ?>
         'anchor' => 'flexible-rental-terms',
         'tag'    => '06',
         'title'  => 'Flexible Rental Terms',
-        'image'  => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg',
+        'image'  => '/wp-content/uploads/2026/07/IMG_5610-e1784000682769.jpeg',
         'body'   => 'Rent by the day, the weekend, the week, or the month. Scale up during harvest or a project push, scale back down when the work slows. Delivery, scheduled service, and pickup are always handled by our team, so the only thing you manage is your job.',
         'note'   => '',
       ],
@@ -109,42 +109,65 @@ get_header(); ?>
 
   <div class="ipr-accent-bar" aria-hidden="true"></div>
 
-  <!-- 02–07 · BLOQUES DE SERVICIO (alternados, con ancla) -->
+  <!-- 02–07 · CONSOLA DE SERVICIOS — lista a la izquierda, detalle a la
+       derecha con animación al cambiar (mismo lenguaje de interacción que
+       el selector de juegos de un dashboard de consola). -->
   <section class="bg-[var(--ipr-white)] py-16 lg:py-20">
-    <div class="mx-auto max-w-5xl px-4">
-      <?php foreach ($service_blocks as $i => $block) : ?>
-        <?php $isReversed = ($i % 2 === 1); ?>
-        <article
-          id="<?php echo esc_attr($block['anchor']); ?>"
-          class="ipr-service-block <?php echo $isReversed ? 'ipr-service-block--reversed' : ''; ?> <?php echo !empty($block['emergency']) ? 'ipr-service-block--emergency' : ''; ?> ipr-reveal-up"
-        >
-          <div class="ipr-service-block__media">
-            <span class="ipr-service-block__tag">Tag No. <?php echo esc_html($block['tag']); ?></span>
-            <img src="<?php echo esc_url($block['image']); ?>" alt="<?php echo esc_attr($block['title']); ?>" loading="lazy">
-          </div>
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="ipr-console">
+        <div class="ipr-console__list" role="tablist" aria-label="Our services">
+          <div class="ipr-console__stamped" aria-hidden="true"></div>
+          <span class="ipr-console__indicator" aria-hidden="true"></span>
+          <?php foreach ($service_blocks as $i => $block) : ?>
+            <button
+              type="button"
+              id="<?php echo esc_attr($block['anchor']); ?>"
+              class="ipr-console__row <?php echo $i === 0 ? 'is-active' : ''; ?>"
+              data-index="<?php echo esc_attr($i); ?>"
+              role="tab"
+              aria-selected="<?php echo $i === 0 ? 'true' : 'false'; ?>"
+            >
+              <span class="ipr-console__row-thumb">
+                <img src="<?php echo esc_url($block['image']); ?>" alt="" loading="lazy">
+              </span>
+              <span class="ipr-console__row-text">
+                <span class="ipr-console__row-title"><?php echo esc_html($block['title']); ?></span>
+                <span class="ipr-console__row-tag">
+                  <?php echo !empty($block['emergency']) ? 'Always On Call' : 'Tag No. ' . esc_html($block['tag']); ?>
+                </span>
+              </span>
+              <span class="ipr-console__row-arrow" aria-hidden="true">›</span>
+            </button>
+          <?php endforeach; ?>
+        </div>
 
-          <div class="ipr-service-block__copy">
-            <h2 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
-              <?php echo esc_html($block['title']); ?>
-            </h2>
-            <p class="mt-4 max-w-md text-[15px] leading-7 text-[var(--ipr-steel)]">
-              <?php echo esc_html($block['body']); ?>
-            </p>
+        <div class="ipr-console__detail">
+          <?php foreach ($service_blocks as $i => $block) : ?>
+            <div class="ipr-console__panel <?php echo $i === 0 ? 'is-active' : ''; ?>" data-index="<?php echo esc_attr($i); ?>">
+              <div class="ipr-console__panel-media">
+                <img src="<?php echo esc_url($block['image']); ?>" alt="<?php echo esc_attr($block['title']); ?>" loading="lazy">
+              </div>
+              <div class="ipr-console__panel-body">
+                <span class="ipr-console__panel-kicker">
+                  <?php echo !empty($block['emergency']) ? 'Emergency Service' : 'Tag No. ' . esc_html($block['tag']); ?>
+                </span>
+                <h2 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
+                  <?php echo esc_html($block['title']); ?>
+                </h2>
+                <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-steel)]">
+                  <?php echo esc_html($block['body']); ?>
+                </p>
 
-            <?php if (!empty($block['emergency'])) : ?>
-              <a href="tel:+15417017369" class="ipr-tab ipr-tab-yellow mt-6">Call 24/7 · 541-701-7369</a>
-            <?php else : ?>
-              <a href="/contact" class="ipr-tab ipr-tab-ink mt-6">Request a Quote</a>
-            <?php endif; ?>
-
-            <?php if (!empty($block['note'])) : ?>
-              <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.06em] text-[var(--ipr-wheat)]">
-                <?php echo esc_html($block['note']); ?>
-              </p>
-            <?php endif; ?>
-          </div>
-        </article>
-      <?php endforeach; ?>
+                <?php if (!empty($block['emergency'])) : ?>
+                  <a href="tel:+15417017369" class="ipr-tab ipr-tab-yellow mt-6">Call 24/7 · 541-701-7369</a>
+                <?php else : ?>
+                  <a href="/contact" class="ipr-tab ipr-tab-ink mt-6">Request a Quote</a>
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -324,66 +347,245 @@ get_header(); ?>
 
   .ipr-tab-ink:hover { filter: brightness(1.25); }
 
-  /* ── Bloques de servicio alternados ── */
-  .ipr-service-block {
+  /* ── Consola de servicios — lista clickeable + panel de detalle ──
+     Dos tonos nada más (navy en la lista, blanco en el detalle) en vez de
+     mezclar blanco + beige + navy, que quedaba desprolijo. Sin etiquetas
+     amarillas sobre las fotos: el estado activo se marca con un indicador
+     que se desliza entre filas, y el panel de la derecha entra con imagen
+     en wipe + textos escalonados cada vez que cambia. */
+  .ipr-console {
     display: grid;
-    gap: 2rem;
-    align-items: center;
-    padding: 2.5rem 0;
-    border-bottom: 2px dashed rgba(16, 38, 59, 0.16);
-  }
-
-  .ipr-service-block:last-child {
-    border-bottom: none;
-  }
-
-  @media (min-width: 768px) {
-    .ipr-service-block {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .ipr-service-block--reversed .ipr-service-block__media {
-      order: 2;
-    }
-
-    .ipr-service-block--reversed .ipr-service-block__copy {
-      order: 1;
-    }
-  }
-
-  .ipr-service-block__media {
-    position: relative;
-  }
-
-  .ipr-service-block__media img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
+    grid-template-columns: 1fr;
     border: 2px solid var(--ipr-ink);
   }
 
-  .ipr-service-block__tag {
+  @media (min-width: 900px) {
+    .ipr-console {
+      grid-template-columns: 340px 1fr;
+    }
+  }
+
+  .ipr-console__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--ipr-ink);
+    overflow: hidden;
+  }
+
+  .ipr-console__stamped {
     position: absolute;
-    top: -12px;
-    left: 1rem;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--ipr-yellow) 0,
+      var(--ipr-yellow) 3px,
+      transparent 3px,
+      transparent 34px
+    );
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  /* Barra que se desliza entre filas al cambiar de servicio (JS mueve
+     translateY/height según la fila activa — ver script). */
+  .ipr-console__indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--ipr-yellow), var(--ipr-wheat));
+    box-shadow: 0 0 14px rgba(243, 178, 0, 0.55);
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1), height .4s cubic-bezier(.22, 1, .36, 1);
     z-index: 2;
-    background: var(--ipr-yellow);
-    color: var(--ipr-ink);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.68rem;
+  }
+
+  .ipr-console__row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1.1rem 0.85rem 1.35rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(254, 254, 254, 0.08);
+    cursor: pointer;
+    text-align: left;
+    transition: background .25s ease, padding-left .25s ease;
+  }
+
+  .ipr-console__row:hover {
+    background: rgba(254, 254, 254, 0.06);
+    padding-left: 1.55rem;
+  }
+
+  .ipr-console__row.is-active {
+    background: rgba(243, 178, 0, 0.1);
+  }
+
+  .ipr-console__row-thumb {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid rgba(254, 254, 254, 0.25);
+    transition: border-color .25s ease;
+  }
+
+  .ipr-console__row-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+  }
+
+  .ipr-console__row:hover .ipr-console__row-thumb img {
+    transform: scale(1.1);
+  }
+
+  .ipr-console__row.is-active .ipr-console__row-thumb {
+    border-color: var(--ipr-yellow);
+  }
+
+  .ipr-console__row-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .ipr-console__row-title {
+    font-family: var(--ipr-display);
     font-weight: 700;
-    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.3rem 0.75rem;
-  }
-
-  .ipr-service-block--emergency .ipr-service-block__media img {
-    border-color: var(--ipr-rust);
-  }
-
-  .ipr-service-block--emergency .ipr-service-block__tag {
-    background: var(--ipr-rust);
+    font-size: 0.86rem;
+    letter-spacing: -0.01em;
     color: var(--ipr-white);
+    transition: color .25s ease;
+  }
+
+  .ipr-console__row-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(254, 254, 254, 0.45);
+    transition: color .25s ease;
+  }
+
+  .ipr-console__row.is-active .ipr-console__row-title {
+    color: var(--ipr-yellow);
+  }
+
+  .ipr-console__row.is-active .ipr-console__row-tag {
+    color: rgba(254, 254, 254, 0.7);
+  }
+
+  .ipr-console__row-arrow {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    color: rgba(254, 254, 254, 0.3);
+    transition: color .25s ease, transform .25s ease;
+  }
+
+  .ipr-console__row.is-active .ipr-console__row-arrow {
+    color: var(--ipr-yellow);
+    transform: translateX(3px);
+  }
+
+  .ipr-console__detail {
+    position: relative;
+    min-height: 460px;
+    background: var(--ipr-white);
+  }
+
+  .ipr-console__panel {
+    display: none;
+    padding: 2rem 1.75rem;
+  }
+
+  .ipr-console__panel.is-active {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .ipr-console__panel.is-active {
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      padding: 2.5rem;
+    }
+  }
+
+  .ipr-console__panel-media {
+    height: 240px;
+    overflow: hidden;
+    border: 2px solid var(--ipr-ink);
+  }
+
+  @media (min-width: 640px) {
+    .ipr-console__panel-media { height: 300px; }
+  }
+
+  .ipr-console__panel-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* La imagen entra con un wipe + leve zoom-out; los textos, escalonados
+     uno tras otro. Al usar @keyframes sobre .is-active, togglear la clase
+     re-dispara todo cada vez que se elige otro servicio. */
+  .ipr-console__panel.is-active .ipr-console__panel-media img {
+    animation: ipr-console-wipe .6s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  @keyframes ipr-console-wipe {
+    from { clip-path: inset(0 100% 0 0); transform: scale(1.1); }
+    to   { clip-path: inset(0 0 0 0); transform: scale(1); }
+  }
+
+  .ipr-console__panel.is-active .ipr-console__panel-body > * {
+    opacity: 0;
+    animation: ipr-console-stagger .5s ease both;
+  }
+
+  .ipr-console__panel.is-active .ipr-console__panel-body > *:nth-child(1) { animation-delay: .05s; }
+  .ipr-console__panel.is-active .ipr-console__panel-body > *:nth-child(2) { animation-delay: .12s; }
+  .ipr-console__panel.is-active .ipr-console__panel-body > *:nth-child(3) { animation-delay: .19s; }
+  .ipr-console__panel.is-active .ipr-console__panel-body > *:nth-child(4) { animation-delay: .26s; }
+
+  @keyframes ipr-console-stagger {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .ipr-console__panel-kicker {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ipr-wheat);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-console__panel.is-active,
+    .ipr-console__panel.is-active .ipr-console__panel-media img,
+    .ipr-console__panel.is-active .ipr-console__panel-body > * {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+    }
+    .ipr-console__row,
+    .ipr-console__indicator { transition: none !important; }
   }
 
   /* ── FAQ accordion (vanilla, no React — aparece una sola vez en el sitio) ── */
@@ -501,6 +703,68 @@ get_header(); ?>
         answer.style.maxHeight = isOpen ? null : answer.scrollHeight + "px";
       });
     });
+
+    // Consola de servicios — clic en la lista cambia el panel de detalle
+    var consoleEl = document.querySelector(".ipr-console");
+    if (consoleEl) {
+      var rows = consoleEl.querySelectorAll(".ipr-console__row");
+      var panels = consoleEl.querySelectorAll(".ipr-console__panel");
+      var indicator = consoleEl.querySelector(".ipr-console__indicator");
+
+      function moveIndicator(row) {
+        if (!indicator) return;
+        indicator.style.transform = "translateY(" + row.offsetTop + "px)";
+        indicator.style.height = row.offsetHeight + "px";
+      }
+
+      function activateRow(row) {
+        var index = row.getAttribute("data-index");
+
+        rows.forEach(function (r) {
+          var isActive = r === row;
+          r.classList.toggle("is-active", isActive);
+          r.setAttribute("aria-selected", String(isActive));
+        });
+
+        panels.forEach(function (panel) {
+          // Forzamos un reflow sacando y volviendo a poner is-active, así
+          // las @keyframes del panel (wipe de imagen, texto escalonado)
+          // se re-disparan aunque ya estuviera "is-active" antes.
+          panel.classList.remove("is-active");
+        });
+
+        var nextPanel = consoleEl.querySelector('.ipr-console__panel[data-index="' + index + '"]');
+        if (nextPanel) {
+          void nextPanel.offsetWidth;
+          nextPanel.classList.add("is-active");
+        }
+
+        moveIndicator(row);
+      }
+
+      rows.forEach(function (row) {
+        row.addEventListener("click", function () { activateRow(row); });
+      });
+
+      window.addEventListener("resize", function () {
+        var activeRow = consoleEl.querySelector(".ipr-console__row.is-active");
+        if (activeRow) moveIndicator(activeRow);
+      });
+
+      // Deep-link: si llegamos con #standard-portable-restrooms (ej. desde
+      // el Home), preseleccionamos esa fila en vez de dejar la primera.
+      var initialId = window.location.hash.replace("#", "");
+      var initialRow = (initialId && document.getElementById(initialId)) || rows[0];
+
+      if (initialRow && initialRow.classList.contains("ipr-console__row")) {
+        activateRow(initialRow);
+        if (initialId) {
+          setTimeout(function () {
+            initialRow.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 100);
+        }
+      }
+    }
   });
 </script>
 

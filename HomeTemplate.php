@@ -29,22 +29,22 @@ get_header(); ?>
     ];
 
     $services = [
-      ['tag' => '01', 'title' => 'Standard Restrooms', 'copy' => 'Clean, fully stocked porta potty rentals for daily use on farms, job sites, and events.', 'anchor' => '/services#standard-portable-restrooms', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
-      ['tag' => '02', 'title' => 'ADA Units', 'copy' => 'Ground-level, wheelchair-accessible restrooms with extra interior space and handrails.', 'anchor' => '/services#ada-accessible-units', 'image' => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg'],
-      ['tag' => '03', 'title' => 'Handwash Stations', 'copy' => 'Portable handwash station rentals with soap, fresh water, and paper towels.', 'anchor' => '/services#handwash-stations', 'image' => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg'],
-      ['tag' => '04', 'title' => 'Restroom Trailers & Doubles', 'copy' => 'Restroom trailers and two-stall doubles with running water, interior lighting, and a clean, comfortable experience.', 'anchor' => '/services#restroom-trailers-doubles', 'image' => '/wp-content/uploads/2026/07/IPR1.jpg-scaled.jpeg'],
-      ['tag' => '05', 'title' => 'Emergency Service', 'copy' => 'Our dispatch line runs 24/7 — call and a real person answers, with same-day delivery in most cases.', 'anchor' => '/services#emergency-service', 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
-      ['tag' => '06', 'title' => 'Flexible Rental Terms', 'copy' => 'Rent by the day, the weekend, the week, or the month — scale up or down as the job changes.', 'anchor' => '/services#flexible-rental-terms', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
+      ['tag' => '01', 'title' => 'Standard Restrooms', 'copy' => 'Clean, fully stocked porta potty rentals for daily use on farms, job sites, and events.', 'anchor' => '/services#standard-portable-restrooms', 'image' => '/wp-content/uploads/2026/07/IMG_5611-e1784000646694.jpeg'],
+      ['tag' => '02', 'title' => 'ADA Units', 'copy' => 'Ground-level, wheelchair-accessible restrooms with extra interior space and handrails.', 'anchor' => '/services#ada-accessible-units', 'image' => '/wp-content/uploads/2026/07/IMG_5610-e1784000682769.jpeg'],
+      ['tag' => '03', 'title' => 'Handwash Stations', 'copy' => 'Portable handwash station rentals with soap, fresh water, and paper towels.', 'anchor' => '/services#handwash-stations', 'image' => '/wp-content/uploads/2026/07/IMG_5608-e1784000794154.jpeg'],
+      ['tag' => '04', 'title' => 'Restroom Trailers & Doubles', 'copy' => 'Restroom trailers and two-stall doubles with running water, interior lighting, and a clean, comfortable experience.', 'anchor' => '/services#restroom-trailers-doubles', 'image' => '/wp-content/uploads/2026/07/IMG_5609-e1784000713881.jpeg'],
+      ['tag' => '05', 'title' => 'Emergency Service', 'copy' => 'Our dispatch line runs 24/7 — call and a real person answers, with same-day delivery in most cases.', 'anchor' => '/services#emergency-service', 'image' => '/wp-content/uploads/2026/07/IMG_5611-e1784000646694.jpeg'],
+      ['tag' => '06', 'title' => 'Flexible Rental Terms', 'copy' => 'Rent by the day, the weekend, the week, or the month — scale up or down as the job changes.', 'anchor' => '/services#flexible-rental-terms', 'image' => '/wp-content/uploads/2026/07/IMG_5610-e1784000682769.jpeg'],
     ];
 
     $industries_bg = '/wp-content/uploads/2026/07/IndustriesBackground-scaled.webp';
 
     // Orden = prioridad real del brief: agricultura encabeza la ruta.
     $industries = [
-      ['title' => 'Agriculture & Ranching', 'copy' => 'Harvest does not wait, and neither do we. We provide field-ready restrooms and handwash stations that keep your crews covered and your operation compliant with field sanitation standards. We understand crew sizes change week to week during the season, so we make adding or moving units fast and simple.', 'priority' => true, 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
-      ['title' => 'Construction', 'copy' => 'From single-home builds to commercial projects, we keep job sites compliant and crews taken care of. Standard units, ADA restrooms, and handwash stations delivered where the work is, serviced weekly, and billed monthly with simple invoicing your office will appreciate.', 'priority' => false],
-      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, county fairs, and community festivals. We help you calculate the right number of units for your guest count and event length, deliver before your setup day, and pick up after the last guest leaves.', 'priority' => false],
-      ['title' => 'School Districts', 'copy' => 'Athletic fields, campus renovations, graduation ceremonies, and outdoor school events. We work around school schedules, deliver during off-hours when needed, and keep every unit clean and stocked.', 'priority' => false],
+      ['title' => 'Agriculture & Ranching', 'copy' => 'Harvest does not wait, and neither do we. We provide field-ready restrooms and handwash stations that keep your crews covered and your operation compliant with field sanitation standards. We understand crew sizes change week to week during the season, so we make adding or moving units fast and simple.', 'image' => '/wp-content/uploads/2026/07/IPR2.jpg-scaled.jpeg'],
+      ['title' => 'Construction', 'copy' => 'From single-home builds to commercial projects, we keep job sites compliant and crews taken care of. Standard units, ADA restrooms, and handwash stations delivered where the work is, serviced weekly, and billed monthly with simple invoicing your office will appreciate.', 'image' => '/wp-content/uploads/2026/07/IPR3.jpg-scaled.jpeg'],
+      ['title' => 'Events', 'copy' => 'Weddings, sporting events, graduations, county fairs, and community festivals. We help you calculate the right number of units for your guest count and event length, deliver before your setup day, and pick up after the last guest leaves.', 'image' => '/wp-content/uploads/2026/07/IPR4.jpg-scaled.jpeg'],
+      ['title' => 'School Districts', 'copy' => 'Athletic fields, campus renovations, graduation ceremonies, and outdoor school events. We work around school schedules, deliver during off-hours when needed, and keep every unit clean and stocked.', 'image' => '/wp-content/uploads/2026/07/IPR5.jpg-scaled.jpeg'],
     ];
 
     $why_values = [
@@ -139,29 +139,28 @@ get_header(); ?>
       </div>
 
       <div class="ipr-carousel mt-14">
-        <button type="button" class="ipr-carousel__btn ipr-carousel__btn--prev" aria-label="Previous services">‹</button>
-
         <div class="ipr-carousel__track">
-          <?php foreach ($services as $service) : ?>
-            <a href="<?php echo esc_url($service['anchor']); ?>" class="ipr-tag ipr-carousel__item group block">
-              <span class="ipr-tag__eyelet"></span>
-              <div class="ipr-tag__media">
-                <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>" loading="lazy">
+          <?php for ($g = 0; $g < 2; $g++) : ?>
+            <?php foreach ($services as $service) : ?>
+              <div class="ipr-carousel__item" <?php echo $g === 1 ? 'aria-hidden="true"' : ''; ?>>
+                <a href="<?php echo esc_url($service['anchor']); ?>" class="ipr-tag group block" tabindex="<?php echo $g === 1 ? '-1' : '0'; ?>">
+                  <div class="ipr-tag__media">
+                    <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>" loading="lazy">
+                  </div>
+                  <h3 class="mt-4 font-[var(--ipr-display)] text-xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
+                    <?php echo esc_html($service['title']); ?>
+                  </h3>
+                  <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-steel)]">
+                    <?php echo esc_html($service['copy']); ?>
+                  </p>
+                  <span class="ipr-tag__cta mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--ipr-ink)] transition group-hover:gap-3">
+                    Learn more →
+                  </span>
+                </a>
               </div>
-              <h3 class="mt-4 font-[var(--ipr-display)] text-xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
-                <?php echo esc_html($service['title']); ?>
-              </h3>
-              <p class="mt-3 text-[15px] leading-7 text-[var(--ipr-steel)]">
-                <?php echo esc_html($service['copy']); ?>
-              </p>
-              <span class="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--ipr-ink)] transition group-hover:gap-3">
-                Learn more →
-              </span>
-            </a>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
+          <?php endfor; ?>
         </div>
-
-        <button type="button" class="ipr-carousel__btn ipr-carousel__btn--next" aria-label="Next services">›</button>
       </div>
 
       <div class="ipr-reveal-up mt-12 text-center">
@@ -183,38 +182,24 @@ get_header(); ?>
         </p>
       </div>
 
-      <div class="mt-14 border-t-2 border-dashed border-[var(--ipr-white)]/30">
+      <div class="mt-14 space-y-6">
         <?php foreach ($industries as $i => $industry) : ?>
-          <?php if ($industry['priority']) : ?>
-            <article class="ipr-reveal-left ipr-manifest-row ipr-manifest-row--priority">
-              <div class="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-                <div>
-                  <h3 class="mt-3 font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
-                    <?php echo esc_html($industry['title']); ?>
-                  </h3>
-                  <p class="mt-3 max-w-md text-[15px] leading-7 text-[var(--ipr-steel)]">
-                    <?php echo esc_html($industry['copy']); ?>
-                  </p>
-                </div>
-                <div class="h-48 w-full overflow-hidden border-2 border-[var(--ipr-ink)] md:h-56">
-                  <img src="<?php echo esc_url($industry['image']); ?>" alt="Agriculture and ranching service" class="h-full w-full object-cover">
-                </div>
-              </div>
-            </article>
-          <?php else : ?>
-            <article class="ipr-reveal-stagger ipr-manifest-row">
-              <span class="font-mono text-xs font-bold text-[var(--ipr-yellow)]"><?php printf('%02d', $i + 1); ?></span>
-              <div class="ipr-manifest-row__leader"></div>
-              <div>
-                <h3 class="font-[var(--ipr-display)] text-lg font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)]">
+          <?php $imageOnRight = ($i % 2 === 0); ?>
+          <article class="ipr-reveal-<?php echo $imageOnRight ? 'left' : 'right'; ?> ipr-manifest-row ipr-manifest-row--priority">
+            <div class="grid gap-6 md:grid-cols-2 md:items-center">
+              <div class="<?php echo $imageOnRight ? '' : 'md:order-2'; ?>">
+                <h3 class="font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)] md:text-3xl">
                   <?php echo esc_html($industry['title']); ?>
                 </h3>
-                <p class="mt-1.5 text-sm leading-6 text-[var(--ipr-white)]/85">
+                <p class="mt-3 max-w-md text-[15px] leading-7 text-[var(--ipr-steel)]">
                   <?php echo esc_html($industry['copy']); ?>
                 </p>
               </div>
-            </article>
-          <?php endif; ?>
+              <div class="h-48 w-full overflow-hidden border-2 border-[var(--ipr-ink)] md:h-56 <?php echo $imageOnRight ? '' : 'md:order-1'; ?>">
+                <img src="<?php echo esc_url($industry['image']); ?>" alt="<?php echo esc_attr($industry['title']); ?> service" class="h-full w-full object-cover">
+              </div>
+            </div>
+          </article>
         <?php endforeach; ?>
       </div>
     </div>
@@ -585,31 +570,24 @@ get_header(); ?>
     clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
   }
 
-  /* ── Service tag cards ── */
+  /* ── Service tag cards — tilt 3D estilo "3D Card" (Aceternity), pero
+     hecho en vanilla JS/CSS: el JS mueve rotateX/rotateY del card según el
+     cursor, y los hijos (foto, título, CTA) "flotan" hacia adelante en
+     translateZ vía :hover, aprovechando el transform-style: preserve-3d. ── */
   .ipr-tag {
     position: relative;
     background: var(--sec-bg);
     border: 1px solid rgba(16, 38, 59, 0.16);
     border-bottom-style: dashed;
     padding: 2.25rem 1.75rem 1.75rem;
-    transition: transform .22s ease, box-shadow .22s ease;
+    transform-style: preserve-3d;
+    transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px);
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .3s ease;
+    will-change: transform;
   }
 
   .ipr-tag:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(16, 38, 59, 0.10);
-  }
-
-  .ipr-tag__eyelet {
-    position: absolute;
-    top: -1px;
-    left: 1.75rem;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid var(--ipr-steel);
-    background: var(--sec-bg);
-    transform: translateY(-50%);
+    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.16);
   }
 
   .ipr-tag__media {
@@ -617,6 +595,7 @@ get_header(); ?>
     height: 170px;
     overflow: hidden;
     border: 2px solid var(--ipr-ink);
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1);
   }
 
   .ipr-tag__media img {
@@ -627,112 +606,86 @@ get_header(); ?>
   }
 
   .ipr-tag:hover .ipr-tag__media img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+  }
+
+  .ipr-tag h3,
+  .ipr-tag__cta {
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .ipr-tag:hover .ipr-tag__media { transform: translateZ(44px); }
+  .ipr-tag:hover h3 { transform: translateZ(28px); }
+  .ipr-tag:hover .ipr-tag__cta { transform: translateZ(18px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-tag,
+    .ipr-tag__media,
+    .ipr-tag h3,
+    .ipr-tag__cta {
+      transform: none !important;
+      transition: none !important;
+    }
   }
 
   /* ── Services carousel ── */
   .ipr-carousel {
     position: relative;
+    overflow: hidden;
   }
 
+  /* Marquee infinito (mismo truco que el Dispatch Manifest Strip): el
+     track duplica las cards una vez y se desliza -50%, así el loop no
+     tiene costura. La curva de cada card la calcula JS en tiempo real
+     (ver script), independiente de este movimiento horizontal. */
   .ipr-carousel__track {
     display: flex;
+    width: max-content;
     gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 0.25rem 0.25rem 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--ipr-wheat) transparent;
+    padding: 1.75rem 0.25rem 2.25rem;
+    animation: ipr-services-scroll 32s linear infinite;
   }
 
-  .ipr-carousel__track::-webkit-scrollbar {
-    height: 6px;
+  .ipr-carousel:hover .ipr-carousel__track {
+    animation-play-state: paused;
   }
 
-  .ipr-carousel__track::-webkit-scrollbar-thumb {
-    background: var(--ipr-wheat);
+  @keyframes ipr-services-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   .ipr-carousel__item {
     flex: 0 0 auto;
-    width: 78%;
-    scroll-snap-align: start;
+    width: 78vw;
+    max-width: 300px;
   }
 
   @media (min-width: 640px) {
-    .ipr-carousel__item { width: 340px; }
+    .ipr-carousel__item { width: 340px; max-width: none; }
   }
 
-  .ipr-carousel__btn {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    background: var(--ipr-ink);
-    color: var(--ipr-white);
-    border: none;
-    font-size: 1.4rem;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 5;
-    transition: filter .2s ease;
-  }
-
-  .ipr-carousel__btn:hover {
-    filter: brightness(1.3);
-  }
-
-  .ipr-carousel__btn--prev { left: -14px; }
-  .ipr-carousel__btn--next { right: -14px; }
-
-  @media (min-width: 900px) {
-    .ipr-carousel__btn { display: flex; }
+  @media (prefers-reduced-motion: reduce) {
+    .ipr-carousel__track { animation: none !important; }
   }
 
   .ipr-industries h2 {
     text-shadow: 0 2px 12px rgba(16, 38, 59, 0.6);
   }
 
-  /* ── Manifest / route rows ── */
-  .ipr-manifest-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.5rem 0;
-    border-bottom: 2px dashed rgba(254, 254, 254, 0.28);
-  }
-
-  /* Texto claro + sombra oscura (en vez de aclarar el fondo) para que se
-     lea bien sobre la foto, sin taparla con un overlay fuerte. */
-  .ipr-manifest-row:not(.ipr-manifest-row--priority) h3,
-  .ipr-manifest-row:not(.ipr-manifest-row--priority) p,
-  .ipr-manifest-row:not(.ipr-manifest-row--priority) > span {
-    text-shadow: 0 1px 3px rgba(16, 38, 59, 0.9), 0 2px 12px rgba(16, 38, 59, 0.55);
-  }
-
+  /* ── Manifest / route rows (Industries) — todas usan el mismo tratamiento
+     de tarjeta oscura que antes era exclusivo de la fila "priority",
+     alternando imagen/texto en secuencia. ── */
   .ipr-manifest-row--priority {
     display: block;
     padding: 2rem 1.75rem;
-    margin-bottom: 0.5rem;
     background: var(--ipr-ink);
     color: var(--ipr-white);
     border: 2px solid var(--ipr-ink);
-    border-bottom-style: solid;
   }
 
   .ipr-manifest-row--priority h3 { color: var(--ipr-white); }
   .ipr-manifest-row--priority p { color: rgba(254, 254, 254, 0.78); }
-
-  .ipr-manifest-row__leader {
-    flex: 1 1 auto;
-    display: none;
-  }
 
   .ipr-manifest-city {
     font-size: 0.92rem;
@@ -844,23 +797,65 @@ get_header(); ?>
 
     items.forEach(function (item) { observer.observe(item); });
 
-    // Services carousel
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Services carousel — el movimiento infinito lo hace el CSS
+    // (@keyframes ipr-services-scroll, pausa en :hover). Acá solo
+    // calculamos en cada frame la curva de arco de las cards, según su
+    // posición real en pantalla, para que se acomode aunque el track
+    // se esté moviendo todo el tiempo.
     document.querySelectorAll(".ipr-carousel").forEach(function (carousel) {
       var track = carousel.querySelector(".ipr-carousel__track");
-      var prev = carousel.querySelector(".ipr-carousel__btn--prev");
-      var next = carousel.querySelector(".ipr-carousel__btn--next");
-      if (!track || !prev || !next) return;
+      if (!track || prefersReducedMotion) return;
 
-      function scrollByCard(direction) {
-        var card = track.querySelector(".ipr-carousel__item");
-        var gap = 24;
-        var amount = card ? card.getBoundingClientRect().width + gap : 300;
-        track.scrollBy({ left: direction * amount, behavior: "smooth" });
+      var maxDip = 22;
+      var maxRotate = 4;
+
+      function updateCurve() {
+        var carouselRect = carousel.getBoundingClientRect();
+        var centerX = carouselRect.left + carouselRect.width / 2;
+        var items = track.querySelectorAll(".ipr-carousel__item");
+        var rects = [];
+
+        items.forEach(function (item) { rects.push(item.getBoundingClientRect()); });
+
+        items.forEach(function (item, i) {
+          var itemRect = rects[i];
+          var itemCenter = itemRect.left + itemRect.width / 2;
+          var dist = (itemCenter - centerX) / (carouselRect.width / 2 || 1);
+          var clamped = Math.max(-1, Math.min(1, dist));
+          var dip = Math.pow(Math.abs(clamped), 1.6) * maxDip;
+          var rot = clamped * maxRotate;
+          item.style.transform = "translateY(" + dip.toFixed(1) + "px) rotate(" + rot.toFixed(2) + "deg)";
+        });
+
+        requestAnimationFrame(updateCurve);
       }
 
-      prev.addEventListener("click", function () { scrollByCard(-1); });
-      next.addEventListener("click", function () { scrollByCard(1); });
+      requestAnimationFrame(updateCurve);
     });
+
+    // Tilt 3D en las cards de servicio (mousemove mueve rotateX/rotateY;
+    // los hijos "flotan" en Z vía CSS :hover — ver estilos de .ipr-tag).
+    if (!prefersReducedMotion && window.matchMedia("(hover: hover)").matches) {
+      document.querySelectorAll(".ipr-tag").forEach(function (card) {
+        var maxTilt = 9;
+
+        card.addEventListener("mousemove", function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width;
+          var y = (e.clientY - rect.top) / rect.height;
+          var ry = (x - 0.5) * maxTilt * 2;
+          var rx = (0.5 - y) * maxTilt * 2;
+          card.style.transform =
+            "perspective(900px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg) translateY(-4px)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+        });
+      });
+    }
   });
 </script>
 
