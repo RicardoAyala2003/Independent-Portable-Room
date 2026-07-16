@@ -142,7 +142,7 @@ function Navbar() {
       <div className="ipr-nav__inner">
         <a href="/home" className="ipr-nav__brand" onClick={closeMenu}>
           <img
-            src="/wp-content/uploads/2026/07/IPR_Brand_Logo.png"
+            src="/wp-content/uploads/2026/07/IPR_Brand_Logo-e1784221669327.png"
             alt="Independent Portable Restrooms"
             className="ipr-nav__logo"
           />
