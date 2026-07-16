@@ -8,12 +8,12 @@
    Compartidos por Navbar, Footer y todos los templates.
 ───────────────────────────────────────────────── */
 :root {
-  --ipr-ink: #10263B;
-  --ipr-yellow: #F3B200;
-  --ipr-wheat: #C68A3D;
-  --ipr-paper: #EAD9AF;
-  --ipr-steel: #59636B;
-  --ipr-rust: #8B3A2B;
+  --ipr-ink: #1A1A1A;
+  --ipr-yellow: #D0161C;
+  --ipr-wheat: #6E6E73;
+  --ipr-paper: #EDEDED;
+  --ipr-steel: #5B5B5F;
+  --ipr-rust: #7A0E12;
   --ipr-white: #FEFEFE;
   --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
   --ipr-nav-h: 152px;
@@ -100,21 +100,23 @@ body {
   clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
 }
 
-/* ── Tag brand mark (usado en Navbar y Footer) ── */
-.ipr-nav__tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 2px dashed var(--ipr-yellow);
-  border-radius: 50%;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--ipr-white);
-  flex-shrink: 0;
+/* ── Logo (usado en Navbar y Footer) ── */
+.ipr-nav__logo {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
+@media (min-width: 640px) {
+  .ipr-nav__logo {
+    height: 72px;
+  }
+}
+
+.ipr-footer__logo {
+  display: block;
+  height: 56px;
+  width: auto;
 }
 
 /* ─────────────────────────────────────────────
@@ -128,11 +130,11 @@ body {
   width: 100%;
   z-index: 50;
   background: var(--ipr-ink);
-  box-shadow: 0 8px 24px rgba(16, 38, 59, 0.18);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.18);
 }
 
 .ipr-nav.is-scrolled {
-  box-shadow: 0 12px 30px rgba(16, 38, 59, 0.32);
+  box-shadow: 0 12px 30px rgba(26, 26, 26, 0.32);
 }
 
 /* WP empuja el <html> con margin-top cuando hay admin bar, pero un elemento
@@ -250,20 +252,8 @@ body.admin-bar .ipr-nav {
 .ipr-nav__brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   text-decoration: none;
   flex-shrink: 0;
-}
-
-.ipr-nav__brand-text {
-  font-family: var(--ipr-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  color: var(--ipr-white);
-  line-height: 1.15;
-  max-width: 195px;
 }
 
 .ipr-nav__links {
@@ -552,12 +542,12 @@ body.admin-bar .ipr-nav {
   color: var(--ipr-yellow);
   padding-bottom: 0.4rem;
   border-bottom: 1px dashed rgba(254, 254, 254, 0.4);
-  text-shadow: 1.5px 1.5px 0 rgba(198, 138, 61, 0.4);
+  text-shadow: 1.5px 1.5px 0 rgba(110, 110, 115, 0.4);
 }
 
 .ipr-stencil-eyebrow--dark {
   color: var(--ipr-wheat);
-  border-bottom-color: rgba(16, 38, 59, 0.25);
+  border-bottom-color: rgba(26, 26, 26, 0.25);
 }
 
 .ipr-stencil-tilt {
@@ -590,7 +580,7 @@ body.admin-bar .ipr-nav {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--ipr-yellow);
-  border-bottom: 1px dashed rgba(243, 180, 0, 0.5);
+  border-bottom: 1px dashed rgba(208, 22, 28, 0.5);
   padding-bottom: 0.1rem;
 }
 
@@ -616,7 +606,7 @@ body.admin-bar .ipr-nav {
 .ipr-tag {
   position: relative;
   background: var(--sec-bg, var(--ipr-white));
-  border: 1px solid rgba(16, 38, 59, 0.16);
+  border: 1px solid rgba(26, 26, 26, 0.16);
   border-bottom-style: dashed;
   padding: 2.25rem 1.75rem 1.75rem;
   transition: transform .22s ease, box-shadow .22s ease;
@@ -624,7 +614,7 @@ body.admin-bar .ipr-nav {
 
 .ipr-tag:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(16, 38, 59, 0.10);
+  box-shadow: 0 14px 30px rgba(26, 26, 26, 0.10);
 }
 
 .ipr-tag__eyelet {
@@ -645,7 +635,7 @@ body.admin-bar .ipr-nav {
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.5rem 0;
-  border-bottom: 2px dashed rgba(16, 38, 59, 0.22);
+  border-bottom: 2px dashed rgba(26, 26, 26, 0.22);
 }
 
 .ipr-manifest-row--priority {
@@ -666,7 +656,7 @@ body.admin-bar .ipr-nav {
 .ipr-manifest-city {
   font-size: 0.92rem;
   color: var(--ipr-ink);
-  border-bottom: 1px dotted rgba(16, 38, 59, 0.25);
+  border-bottom: 1px dotted rgba(26, 26, 26, 0.25);
   padding-bottom: 0.3rem;
 }
 

@@ -141,11 +141,11 @@ function Navbar() {
 
       <div className="ipr-nav__inner">
         <a href="/home" className="ipr-nav__brand" onClick={closeMenu}>
-          {/* [LOGO — Pend. #A] Reemplazar por logo real del cliente cuando lo entregue. */}
-          <span className="ipr-nav__tag">IPR</span>
-          <span className="ipr-nav__brand-text">
-            Independent Portable Restrooms
-          </span>
+          <img
+            src="/wp-content/uploads/2026/07/IPR_Brand_Logo.png"
+            alt="Independent Portable Restrooms"
+            className="ipr-nav__logo"
+          />
         </a>
 
         <nav className="ipr-nav__links" aria-label="Primary">

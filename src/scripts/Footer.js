@@ -56,8 +56,11 @@ function Footer() {
       <div className="ipr-footer__top">
         <div className="ipr-footer__col">
           <a href="/" className="ipr-footer__brand">
-            <span className="ipr-nav__tag">IPR</span>
-            <span>Independent Portable Restrooms</span>
+            <img
+              src="/wp-content/uploads/2026/07/IPR_Brand_Logo.png"
+              alt="Independent Portable Restrooms"
+              className="ipr-footer__logo"
+            />
           </a>
           <p className="ipr-footer__tagline">
             Clean, reliable portable restrooms across the Columbia Basin —

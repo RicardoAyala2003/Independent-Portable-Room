@@ -149,12 +149,12 @@ get_header(); ?>
 
 <style>
   .ipr-about {
-    --ipr-ink: #10263B;
-    --ipr-yellow: #F3B200;
-    --ipr-wheat: #C68A3D;
-    --ipr-paper: #EAD9AF;
-    --ipr-steel: #59636B;
-    --ipr-rust: #8B3A2B;
+    --ipr-ink: #1A1A1A;
+    --ipr-yellow: #D0161C;
+    --ipr-wheat: #6E6E73;
+    --ipr-paper: #EDEDED;
+    --ipr-steel: #5B5B5F;
+    --ipr-rust: #7A0E12;
     --ipr-white: #FEFEFE;
     --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
 
@@ -185,7 +185,7 @@ get_header(); ?>
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--ipr-yellow);
-    border-bottom: 1px dashed rgba(243, 180, 0, 0.5);
+    border-bottom: 1px dashed rgba(208, 22, 28, 0.5);
     padding-bottom: 0.1rem;
   }
 
@@ -248,18 +248,18 @@ get_header(); ?>
     color: var(--ipr-yellow);
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed rgba(254, 254, 254, 0.4);
-    text-shadow: 1.5px 1.5px 0 rgba(198, 138, 61, 0.4);
+    text-shadow: 1.5px 1.5px 0 rgba(110, 110, 115, 0.4);
   }
 
   .ipr-stencil-eyebrow--dark {
     color: var(--ipr-wheat);
-    border-bottom-color: rgba(16, 38, 59, 0.25);
+    border-bottom-color: rgba(26, 26, 26, 0.25);
   }
 
   /* ── Mission/Vision/Values tags (mismo lenguaje de "tag" del Home) ── */
   .ipr-tag {
     position: relative;
-    border: 1px solid rgba(16, 38, 59, 0.16);
+    border: 1px solid rgba(26, 26, 26, 0.16);
     border-bottom-style: dashed;
     padding: 2.25rem 1.75rem 1.75rem;
     transition: transform .22s ease, box-shadow .22s ease;
@@ -267,7 +267,7 @@ get_header(); ?>
 
   .ipr-tag:hover {
     transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(16, 38, 59, 0.10);
+    box-shadow: 0 14px 30px rgba(26, 26, 26, 0.10);
   }
 
   .ipr-tag__eyelet {
@@ -407,7 +407,7 @@ get_header(); ?>
 
   .ipr-tag.ipr-reveal-pop:hover {
     transform: translateY(-4px) rotate(-1.5deg);
-    box-shadow: 0 14px 30px rgba(16, 38, 59, 0.12);
+    box-shadow: 0 14px 30px rgba(26, 26, 26, 0.12);
   }
 
   .ipr-tag.ipr-reveal-pop {

@@ -180,14 +180,14 @@ get_header(); ?>
             <svg viewBox="0 0 400 260" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated map pin at Independent Portable Restrooms office">
               <defs>
                 <pattern id="ipr-contact-grid" width="26" height="26" patternUnits="userSpaceOnUse">
-                  <path d="M 26 0 L 0 0 0 26" fill="none" stroke="#10263B" stroke-opacity="0.06" stroke-width="1"/>
+                  <path d="M 26 0 L 0 0 0 26" fill="none" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="1"/>
                 </pattern>
               </defs>
               <rect width="400" height="260" fill="url(#ipr-contact-grid)" />
-              <circle cx="200" cy="130" r="11" fill="#F3B200" stroke="#10263B" stroke-width="2" />
-              <circle cx="200" cy="130" r="24" fill="none" stroke="#C68A3D" stroke-width="1.5" stroke-dasharray="4 6" />
-              <text x="200" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#10263B">207 NW FIRST STREET</text>
-              <text x="200" y="192" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">BOARDMAN, OR 97818</text>
+              <circle cx="200" cy="130" r="11" fill="#D0161C" stroke="#1A1A1A" stroke-width="2" />
+              <circle cx="200" cy="130" r="24" fill="none" stroke="#6E6E73" stroke-width="1.5" stroke-dasharray="4 6" />
+              <text x="200" y="175" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#1A1A1A">207 NW FIRST STREET</text>
+              <text x="200" y="192" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B5B5F">BOARDMAN, OR 97818</text>
             </svg>
           </div>
         </div>
@@ -203,12 +203,12 @@ get_header(); ?>
 
 <style>
   .ipr-contact {
-    --ipr-ink: #10263B;
-    --ipr-yellow: #F3B200;
-    --ipr-wheat: #C68A3D;
-    --ipr-paper: #EAD9AF;
-    --ipr-steel: #59636B;
-    --ipr-rust: #8B3A2B;
+    --ipr-ink: #1A1A1A;
+    --ipr-yellow: #D0161C;
+    --ipr-wheat: #6E6E73;
+    --ipr-paper: #EDEDED;
+    --ipr-steel: #5B5B5F;
+    --ipr-rust: #7A0E12;
     --ipr-white: #FEFEFE;
     --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
 
@@ -244,12 +244,12 @@ get_header(); ?>
     color: var(--ipr-yellow);
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed rgba(254, 254, 254, 0.4);
-    text-shadow: 1.5px 1.5px 0 rgba(198, 138, 61, 0.4);
+    text-shadow: 1.5px 1.5px 0 rgba(110, 110, 115, 0.4);
   }
 
   .ipr-stencil-eyebrow--dark {
     color: var(--ipr-wheat);
-    border-bottom-color: rgba(16, 38, 59, 0.25);
+    border-bottom-color: rgba(26, 26, 26, 0.25);
   }
 
   /* ── Tarjeta del formulario ── */
@@ -298,7 +298,7 @@ get_header(); ?>
   .ipr-quote-form__field textarea {
     width: 100%;
     min-height: 48px;
-    border: 1px solid rgba(16, 38, 59, 0.24);
+    border: 1px solid rgba(26, 26, 26, 0.24);
     background: var(--ipr-white);
     padding: 0.75rem 0.9rem;
     font-size: 0.95rem;
@@ -317,7 +317,7 @@ get_header(); ?>
   .ipr-quote-form__field select:focus,
   .ipr-quote-form__field textarea:focus {
     border-color: var(--ipr-yellow);
-    box-shadow: 0 0 0 3px rgba(243, 178, 0, 0.18);
+    box-shadow: 0 0 0 3px rgba(208, 22, 28, 0.18);
   }
 
   /* Honeypot — oculto de forma accesible (no display:none, para no gatillar
@@ -349,13 +349,13 @@ get_header(); ?>
   .ipr-form-message.is-visible { display: block; }
 
   .ipr-form-message--success {
-    background: rgba(198, 138, 61, 0.12);
+    background: rgba(110, 110, 115, 0.12);
     border-color: var(--ipr-wheat);
     color: var(--ipr-ink);
   }
 
   .ipr-form-message--error {
-    background: rgba(139, 58, 43, 0.10);
+    background: rgba(122, 14, 18, 0.10);
     border-color: var(--ipr-rust);
     color: var(--ipr-rust);
     margin-top: 0.6rem;

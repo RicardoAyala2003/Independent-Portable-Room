@@ -170,14 +170,14 @@ get_header(); ?>
   </section>
 
   <!-- 04 · INDUSTRIES — hoja de ruta / manifiesto de items -->
-  <section class="ipr-industries border-y-4 border-[var(--ipr-ink)] py-20 lg:py-24" style="--sec-bg: var(--ipr-paper); background-image: linear-gradient(rgba(16,38,59,0.5), rgba(16,38,59,0.5)), url('<?php echo esc_url($industries_bg); ?>'); background-size: cover; background-position: center;">
+  <section class="ipr-industries border-y-4 border-[var(--ipr-ink)] py-20 lg:py-24" style="--sec-bg: var(--ipr-paper); background-image: linear-gradient(rgba(26,26,26,0.5), rgba(26,26,26,0.5)), url('<?php echo esc_url($industries_bg); ?>'); background-size: cover; background-position: center;">
     <div class="mx-auto max-w-5xl px-4">
       <div class="ipr-reveal-up mx-auto max-w-3xl text-center">
         <p class="ipr-stencil-eyebrow">Route Manifest</p>
         <h2 class="mt-4 font-[var(--ipr-display)] text-3xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-white)] md:text-5xl">
           Industries We Serve
         </h2>
-        <p class="mt-5 text-base leading-8 text-[var(--ipr-white)]/85" style="text-shadow: 0 1px 3px rgba(16,38,59,0.9), 0 2px 12px rgba(16,38,59,0.55);">
+        <p class="mt-5 text-base leading-8 text-[var(--ipr-white)]/85" style="text-shadow: 0 1px 3px rgba(26,26,26,0.9), 0 2px 12px rgba(26,26,26,0.55);">
           Eastern Oregon runs on agriculture, construction, and community. We built our routes and our fleet around the industries that keep this region working.
         </p>
       </div>
@@ -290,45 +290,45 @@ get_header(); ?>
           <svg viewBox="0 0 600 360" class="h-full w-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated dispatch route across the Columbia Basin">
             <defs>
               <pattern id="ipr-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#10263B" stroke-opacity="0.06" stroke-width="1"/>
+                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="1"/>
               </pattern>
             </defs>
             <rect width="600" height="360" fill="url(#ipr-grid)" />
 
             <!-- Ruta de despacho (trazo punteado, forma ilustrativa) -->
             <path d="M 90 260 C 150 200, 170 150, 230 140 S 320 170, 360 120 S 470 90, 520 70"
-                  fill="none" stroke="#C68A3D" stroke-width="2.5" stroke-dasharray="7 7" />
+                  fill="none" stroke="#6E6E73" stroke-width="2.5" stroke-dasharray="7 7" />
 
             <!-- HQ · Boardman, OR -->
-            <circle cx="90" cy="260" r="9" fill="#F3B200" stroke="#10263B" stroke-width="2" />
-            <text x="106" y="257" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700" fill="#10263B">HQ · BOARDMAN, OR</text>
-            <text x="106" y="272" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">207 NW First Street</text>
+            <circle cx="90" cy="260" r="9" fill="#D0161C" stroke="#1A1A1A" stroke-width="2" />
+            <text x="106" y="257" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="700" fill="#1A1A1A">HQ · BOARDMAN, OR</text>
+            <text x="106" y="272" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B5B5F">207 NW First Street</text>
 
             <!-- Stops OR -->
-            <circle cx="230" cy="140" r="5" fill="#10263B" />
-            <text x="240" y="137" font-family="IBM Plex Mono, monospace" font-size="11" fill="#10263B">HERMISTON</text>
+            <circle cx="230" cy="140" r="5" fill="#1A1A1A" />
+            <text x="240" y="137" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1A1A1A">HERMISTON</text>
 
-            <circle cx="360" cy="120" r="5" fill="#10263B" />
-            <text x="370" y="117" font-family="IBM Plex Mono, monospace" font-size="11" fill="#10263B">PENDLETON</text>
+            <circle cx="360" cy="120" r="5" fill="#1A1A1A" />
+            <text x="370" y="117" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1A1A1A">PENDLETON</text>
 
-            <circle cx="170" cy="150" r="4" fill="#59636B" />
-            <text x="145" y="185" font-family="IBM Plex Mono, monospace" font-size="10" fill="#59636B">IRRIGON</text>
+            <circle cx="170" cy="150" r="4" fill="#5B5B5F" />
+            <text x="145" y="185" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5B5B5F">IRRIGON</text>
 
             <!-- Stops WA (Tri-Cities) -->
-            <circle cx="470" cy="90" r="5" fill="#10263B" />
-            <text x="480" y="87" font-family="IBM Plex Mono, monospace" font-size="11" fill="#10263B">KENNEWICK, WA</text>
+            <circle cx="470" cy="90" r="5" fill="#1A1A1A" />
+            <text x="480" y="87" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1A1A1A">KENNEWICK, WA</text>
 
-            <circle cx="520" cy="70" r="5" fill="#10263B" />
-            <text x="500" y="52" font-family="IBM Plex Mono, monospace" font-size="11" fill="#10263B">RICHLAND, WA</text>
+            <circle cx="520" cy="70" r="5" fill="#1A1A1A" />
+            <text x="500" y="52" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1A1A1A">RICHLAND, WA</text>
 
             <!-- Marca de rumbo -->
             <g transform="translate(540, 300)">
-              <circle r="22" fill="none" stroke="#10263B" stroke-width="1.5" stroke-dasharray="3 4" />
-              <text x="0" y="-28" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#10263B">N</text>
-              <path d="M0 -14 L5 4 L0 -1 L-5 4 Z" fill="#F3B200" />
+              <circle r="22" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="3 4" />
+              <text x="0" y="-28" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#1A1A1A">N</text>
+              <path d="M0 -14 L5 4 L0 -1 L-5 4 Z" fill="#D0161C" />
             </g>
 
-            <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" letter-spacing="2" fill="#C68A3D">ROUTE MAP · ILLUSTRATIVE</text>
+            <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" letter-spacing="2" fill="#6E6E73">ROUTE MAP · ILLUSTRATIVE</text>
           </svg>
         </div>
       </div>
@@ -353,12 +353,12 @@ get_header(); ?>
 
 <style>
   .ipr-home {
-    --ipr-ink: #10263B;
-    --ipr-yellow: #F3B200;
-    --ipr-wheat: #C68A3D;
-    --ipr-paper: #EAD9AF;
-    --ipr-steel: #59636B;
-    --ipr-rust: #8B3A2B;
+    --ipr-ink: #1A1A1A;
+    --ipr-yellow: #D0161C;
+    --ipr-wheat: #6E6E73;
+    --ipr-paper: #EDEDED;
+    --ipr-steel: #5B5B5F;
+    --ipr-rust: #7A0E12;
     --ipr-white: #FEFEFE;
     --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
     --sec-bg: var(--ipr-white);
@@ -460,12 +460,12 @@ get_header(); ?>
     color: var(--ipr-yellow);
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed rgba(254, 254, 254, 0.4);
-    text-shadow: 1.5px 1.5px 0 rgba(198, 138, 61, 0.4);
+    text-shadow: 1.5px 1.5px 0 rgba(110, 110, 115, 0.4);
   }
 
   .ipr-stencil-eyebrow--dark {
     color: var(--ipr-wheat);
-    border-bottom-color: rgba(16, 38, 59, 0.25);
+    border-bottom-color: rgba(26, 26, 26, 0.25);
   }
 
   .ipr-stencil-tilt {
@@ -497,7 +497,7 @@ get_header(); ?>
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--ipr-yellow);
-    border-bottom: 1px dashed rgba(243, 180, 0, 0.5);
+    border-bottom: 1px dashed rgba(208, 22, 28, 0.5);
     padding-bottom: 0.1rem;
   }
 
@@ -577,7 +577,7 @@ get_header(); ?>
   .ipr-tag {
     position: relative;
     background: var(--sec-bg);
-    border: 1px solid rgba(16, 38, 59, 0.16);
+    border: 1px solid rgba(26, 26, 26, 0.16);
     border-bottom-style: dashed;
     padding: 2.25rem 1.75rem 1.75rem;
     transform-style: preserve-3d;
@@ -587,7 +587,7 @@ get_header(); ?>
   }
 
   .ipr-tag:hover {
-    box-shadow: 0 20px 40px rgba(16, 38, 59, 0.16);
+    box-shadow: 0 20px 40px rgba(26, 26, 26, 0.16);
   }
 
   .ipr-tag__media {
@@ -671,7 +671,7 @@ get_header(); ?>
   }
 
   .ipr-industries h2 {
-    text-shadow: 0 2px 12px rgba(16, 38, 59, 0.6);
+    text-shadow: 0 2px 12px rgba(26, 26, 26, 0.6);
   }
 
   /* ── Manifest / route rows (Industries) — todas usan el mismo tratamiento
@@ -691,7 +691,7 @@ get_header(); ?>
   .ipr-manifest-city {
     font-size: 0.92rem;
     color: var(--ipr-ink);
-    border-bottom: 1px dotted rgba(16, 38, 59, 0.25);
+    border-bottom: 1px dotted rgba(26, 26, 26, 0.25);
     padding-bottom: 0.3rem;
   }
 
@@ -721,10 +721,10 @@ get_header(); ?>
      interacción — no solo al pasar el mouse. */
   @keyframes ipr-stamp-pulse {
     0%, 100% {
-      box-shadow: 0 0 0 rgba(243, 178, 0, 0);
+      box-shadow: 0 0 0 rgba(208, 22, 28, 0);
     }
     50% {
-      box-shadow: 0 0 0 3px rgba(243, 178, 0, 0.18), 0 0 26px rgba(243, 178, 0, 0.45);
+      box-shadow: 0 0 0 3px rgba(208, 22, 28, 0.18), 0 0 26px rgba(208, 22, 28, 0.45);
     }
   }
 

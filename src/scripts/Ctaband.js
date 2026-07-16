@@ -40,12 +40,12 @@ function CTABand({
         .ipr-ctaband {
           position: relative;
           overflow: hidden;
-          background: var(--ipr-ink, #10263B);
+          background: var(--ipr-ink, #1A1A1A);
           padding: 4rem 1.5rem;
           text-align: center;
           border-top: 5px solid transparent;
           border-bottom: 5px solid transparent;
-          border-image: linear-gradient(90deg, var(--ipr-yellow, #F3B200) 0%, var(--ipr-wheat, #C68A3D) 100%) 1;
+          border-image: linear-gradient(90deg, var(--ipr-yellow, #D0161C) 0%, var(--ipr-wheat, #6E6E73) 100%) 1;
         }
 
         /* Estampado cruzado (rombos), mismo lenguaje visual que las demás
@@ -55,8 +55,8 @@ function CTABand({
           position: absolute;
           inset: 0;
           background-image:
-            repeating-linear-gradient(45deg, var(--ipr-yellow, #F3B200) 0, var(--ipr-yellow, #F3B200) 1.5px, transparent 1.5px, transparent 24px),
-            repeating-linear-gradient(-45deg, var(--ipr-yellow, #F3B200) 0, var(--ipr-yellow, #F3B200) 1.5px, transparent 1.5px, transparent 24px);
+            repeating-linear-gradient(45deg, var(--ipr-yellow, #D0161C) 0, var(--ipr-yellow, #D0161C) 1.5px, transparent 1.5px, transparent 24px),
+            repeating-linear-gradient(-45deg, var(--ipr-yellow, #D0161C) 0, var(--ipr-yellow, #D0161C) 1.5px, transparent 1.5px, transparent 24px);
           opacity: 0.1;
           mix-blend-mode: overlay;
           pointer-events: none;
@@ -76,7 +76,7 @@ function CTABand({
           font-weight: 700;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: var(--ipr-yellow, #F3B200);
+          color: var(--ipr-yellow, #D0161C);
           padding-bottom: 0.4rem;
           border-bottom: 1px dashed rgba(254, 254, 254, 0.35);
         }
@@ -138,8 +138,8 @@ function CTABand({
         }
 
         .ipr-ctaband__tab--yellow {
-          background: var(--ipr-yellow, #F3B200);
-          color: var(--ipr-ink, #10263B);
+          background: var(--ipr-yellow, #D0161C);
+          color: var(--ipr-ink, #1A1A1A);
         }
 
         .ipr-ctaband__tab--yellow:hover { filter: brightness(1.08); }

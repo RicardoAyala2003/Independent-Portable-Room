@@ -231,12 +231,12 @@ get_header(); ?>
 
 <style>
   .ipr-services {
-    --ipr-ink: #10263B;
-    --ipr-yellow: #F3B200;
-    --ipr-wheat: #C68A3D;
-    --ipr-paper: #EAD9AF;
-    --ipr-steel: #59636B;
-    --ipr-rust: #8B3A2B;
+    --ipr-ink: #1A1A1A;
+    --ipr-yellow: #D0161C;
+    --ipr-wheat: #6E6E73;
+    --ipr-paper: #EDEDED;
+    --ipr-steel: #5B5B5F;
+    --ipr-rust: #7A0E12;
     --ipr-white: #FEFEFE;
     --ipr-display: 'Oswald', 'Segoe UI', Arial, sans-serif;
 
@@ -268,7 +268,7 @@ get_header(); ?>
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--ipr-yellow);
-    border-bottom: 1px dashed rgba(243, 180, 0, 0.5);
+    border-bottom: 1px dashed rgba(208, 22, 28, 0.5);
     padding-bottom: 0.1rem;
   }
 
@@ -304,12 +304,12 @@ get_header(); ?>
     color: var(--ipr-yellow);
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed rgba(254, 254, 254, 0.4);
-    text-shadow: 1.5px 1.5px 0 rgba(198, 138, 61, 0.4);
+    text-shadow: 1.5px 1.5px 0 rgba(110, 110, 115, 0.4);
   }
 
   .ipr-stencil-eyebrow--dark {
     color: var(--ipr-wheat);
-    border-bottom-color: rgba(16, 38, 59, 0.25);
+    border-bottom-color: rgba(26, 26, 26, 0.25);
   }
 
   /* ── Tear-off tab buttons ── */
@@ -357,7 +357,7 @@ get_header(); ?>
     display: grid;
     grid-template-columns: 1fr;
     overflow: hidden;
-    box-shadow: 0 40px 70px -28px rgba(16, 38, 59, 0.32), 0 8px 20px rgba(16, 38, 59, 0.08);
+    box-shadow: 0 40px 70px -28px rgba(26, 26, 26, 0.32), 0 8px 20px rgba(26, 26, 26, 0.08);
   }
 
   @media (min-width: 900px) {
@@ -404,7 +404,7 @@ get_header(); ?>
     width: 4px;
     height: 0;
     background: linear-gradient(180deg, var(--ipr-yellow), var(--ipr-wheat));
-    box-shadow: 0 0 14px rgba(243, 178, 0, 0.55);
+    box-shadow: 0 0 14px rgba(208, 22, 28, 0.55);
     transition: transform .4s cubic-bezier(.22, 1, .36, 1), height .4s cubic-bezier(.22, 1, .36, 1);
     z-index: 2;
   }
@@ -430,7 +430,7 @@ get_header(); ?>
   }
 
   .ipr-console__row.is-active {
-    background: rgba(243, 178, 0, 0.1);
+    background: rgba(208, 22, 28, 0.1);
   }
 
   .ipr-console__row-thumb {
@@ -548,7 +548,7 @@ get_header(); ?>
     position: relative;
     height: 240px;
     overflow: hidden;
-    box-shadow: 0 24px 46px -18px rgba(16, 38, 59, 0.35);
+    box-shadow: 0 24px 46px -18px rgba(26, 26, 26, 0.35);
   }
 
   /* Halo de color detrás de la foto — le da profundidad sin necesidad de
@@ -558,7 +558,7 @@ get_header(); ?>
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    box-shadow: inset 0 0 0 1px rgba(16, 38, 59, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(26, 26, 26, 0.08);
     pointer-events: none;
   }
 
@@ -628,7 +628,7 @@ get_header(); ?>
 
   /* ── FAQ accordion (vanilla, no React — aparece una sola vez en el sitio) ── */
   .ipr-faq__item {
-    border-bottom: 2px dashed rgba(16, 38, 59, 0.22);
+    border-bottom: 2px dashed rgba(26, 26, 26, 0.22);
   }
 
   .ipr-faq__question {
