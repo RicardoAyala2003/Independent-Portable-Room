@@ -129,8 +129,9 @@ body {
   left: 0;
   width: 100%;
   z-index: 50;
-  background: var(--ipr-ink);
-  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.18);
+  background: var(--ipr-white);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.10);
 }
 
 .ipr-nav.is-scrolled {
@@ -171,7 +172,7 @@ body.admin-bar .ipr-nav {
 @media (min-width: 1024px) {
   .ipr-topbar {
     display: block;
-    background: rgba(8, 20, 33, 0.92);
+    background: var(--ipr-ink);
     border-bottom: 1px solid rgba(254, 254, 254, 0.08);
   }
 }
@@ -269,7 +270,7 @@ body.admin-bar .ipr-nav {
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgba(254, 254, 254, 0.82);
+  color: var(--ipr-ink);
   text-decoration: none;
   white-space: nowrap;
   transition: color .2s ease;
@@ -289,14 +290,38 @@ body.admin-bar .ipr-nav {
 
 .ipr-nav__phone {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--ipr-white);
+  color: var(--ipr-ink);
   text-decoration: none;
   line-height: 1.25;
   white-space: nowrap;
+}
+
+.ipr-nav__phone-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ipr-ink);
+  color: var(--ipr-white);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.ipr-nav__phone:hover .ipr-nav__phone-icon {
+  background: var(--ipr-yellow);
+  transform: scale(1.06);
+}
+
+.ipr-nav__phone-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .ipr-nav__phone-label {
@@ -309,15 +334,27 @@ body.admin-bar .ipr-nav {
 
 .ipr-nav__es {
   display: none;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: rgba(254, 254, 254, 0.6);
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ipr-steel);
   white-space: nowrap;
+  padding: 0.4rem 0.75rem;
+  border: 1px dashed rgba(26, 26, 26, 0.22);
+  border-radius: 999px;
+  background: rgba(26, 26, 26, 0.03);
+}
+
+.ipr-nav__es svg {
+  flex-shrink: 0;
+  color: var(--ipr-yellow);
 }
 
 @media (min-width: 1440px) {
   .ipr-nav__es {
-    display: inline;
+    display: inline-flex;
   }
 }
 
@@ -340,7 +377,7 @@ body.admin-bar .ipr-nav {
   display: block;
   height: 2px;
   width: 100%;
-  background: var(--ipr-white);
+  background: var(--ipr-ink);
 }
 
 .ipr-nav__mobile {
@@ -355,7 +392,7 @@ body.admin-bar .ipr-nav {
 
 .ipr-nav__mobile.is-open {
   max-height: 420px;
-  border-top: 1px dashed rgba(254, 254, 254, 0.2);
+  border-top: 1px dashed rgba(26, 26, 26, 0.15);
   margin-top: 0.75rem;
   padding: 1.25rem 2rem 1.75rem;
   gap: 0.9rem;
@@ -367,7 +404,7 @@ body.admin-bar .ipr-nav {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ipr-white);
+  color: var(--ipr-ink);
   text-decoration: none;
 }
 
@@ -399,9 +436,10 @@ body.admin-bar .ipr-nav {
    Footer
 ───────────────────────────────────────────────── */
 .ipr-footer {
-  background: var(--ipr-ink);
-  color: rgba(254, 254, 254, 0.86);
+  background: var(--ipr-white);
+  color: rgba(26, 26, 26, 0.72);
   padding: 4rem 1.25rem 0;
+  border-top: 4px solid var(--ipr-ink);
 }
 
 .ipr-footer__top {
@@ -411,7 +449,7 @@ body.admin-bar .ipr-nav {
   gap: 2.5rem;
   grid-template-columns: 1fr;
   padding-bottom: 3rem;
-  border-bottom: 1px dashed rgba(254, 254, 254, 0.18);
+  border-bottom: 1px dashed rgba(26, 26, 26, 0.18);
 }
 
 @media (min-width: 768px) {
@@ -428,7 +466,7 @@ body.admin-bar .ipr-nav {
   font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--ipr-white);
+  color: var(--ipr-ink);
   text-decoration: none;
 }
 
@@ -437,7 +475,7 @@ body.admin-bar .ipr-nav {
   max-width: 26ch;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: rgba(254, 254, 254, 0.68);
+  color: var(--ipr-steel);
 }
 
 .ipr-footer__social {
@@ -452,8 +490,13 @@ body.admin-bar .ipr-nav {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--ipr-wheat);
+  color: var(--ipr-steel);
   text-decoration: none;
+  transition: color .2s ease;
+}
+
+.ipr-footer__social-link:hover {
+  color: var(--ipr-yellow);
 }
 
 .ipr-footer__heading {
@@ -477,19 +520,19 @@ body.admin-bar .ipr-nav {
 
 .ipr-footer__list a {
   font-size: 0.88rem;
-  color: rgba(254, 254, 254, 0.78);
+  color: var(--ipr-steel);
   text-decoration: none;
   transition: color .2s ease;
 }
 
 .ipr-footer__list a:hover {
-  color: var(--ipr-white);
+  color: var(--ipr-yellow);
 }
 
 .ipr-footer__address {
   font-size: 0.88rem;
   line-height: 1.6;
-  color: rgba(254, 254, 254, 0.78);
+  color: var(--ipr-steel);
   font-style: normal;
   margin-bottom: 1rem;
 }
@@ -500,7 +543,7 @@ body.admin-bar .ipr-nav {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--ipr-white);
+  color: var(--ipr-ink);
   text-decoration: none;
   margin-bottom: 0.85rem;
 }
@@ -514,7 +557,7 @@ body.admin-bar .ipr-nav {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(254, 254, 254, 0.5);
+  color: rgba(26, 26, 26, 0.45);
 }
 
 .ipr-footer__bottom {
@@ -523,8 +566,9 @@ body.admin-bar .ipr-nav {
   padding: 1.5rem 0;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
-  color: rgba(254, 254, 254, 0.5);
+  color: rgba(26, 26, 26, 0.45);
   text-align: center;
+  border-top: 1px solid rgba(26, 26, 26, 0.1);
 }
 
 /* ─────────────────────────────────────────────

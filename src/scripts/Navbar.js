@@ -160,11 +160,29 @@ function Navbar() {
 
         <div className="ipr-nav__actions">
           <a href="tel:+15414813111" className="ipr-nav__phone">
-            <span className="ipr-nav__phone-label">Office</span>
-            541-481-3111
+            <span className="ipr-nav__phone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z" />
+              </svg>
+            </span>
+            <span className="ipr-nav__phone-text">
+              <span className="ipr-nav__phone-label">Office</span>
+              541-481-3111
+            </span>
           </a>
-          <span className="ipr-nav__es">Se habla español</span>
+
+          <span className="ipr-nav__es">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.4 2.5 3.5 5.5 3.5 9s-1.1 6.5-3.5 9c-2.4-2.5-3.5-5.5-3.5-9s1.1-6.5 3.5-9Z" />
+            </svg>
+            Se habla español
+          </span>
+
           <a href="/contact" className="ipr-tab ipr-tab-yellow ipr-tab-sm">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+              <path d="M3 11 21 3l-8 18-2-8-8-2Z" />
+            </svg>
             Request a Quote
           </a>
         </div>

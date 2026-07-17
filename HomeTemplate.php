@@ -65,7 +65,7 @@ get_header(); ?>
   ?>
 
   <!-- 01 · HERO — encabezado de manifiesto de despacho -->
-  <section class="ipr-bleed-under-nav relative flex min-h-[620px] w-full items-center overflow-hidden lg:min-h-[720px]">
+  <section class="ipr-bleed-under-nav relative flex min-h-[620px] w-full items-start overflow-hidden lg:min-h-[720px]">
     <div class="absolute inset-0">
       <video
         class="h-full w-full object-cover"
@@ -85,26 +85,106 @@ get_header(); ?>
       <strong><?php echo esc_html(date('ymd')); ?>-IPR</strong>
     </div>
 
-    <div class="relative z-10 mx-auto w-full max-w-5xl px-4 py-20 text-center">
-      <h1 class="ipr-reveal-up mt-6 font-[var(--ipr-display)] text-4xl font-bold uppercase leading-[1.04] tracking-[-0.01em] text-[var(--ipr-white)] md:text-6xl">
-        Portable Restroom Rentals,<br>
-        <span class="ipr-stencil-tilt">Delivered On Time.</span>
-      </h1>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 pb-16 lg:pb-20" style="padding-top: calc(var(--ipr-nav-h, 84px) + 2.5rem);">
+      <div class="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
 
-      <p class="ipr-reveal-up mx-auto mt-6 max-w-2xl text-base leading-7 text-[var(--ipr-white)]/82">
-        Independent Portable Restrooms has served farms, ranches, job sites, and events across Eastern Oregon and the Washington Tri-Cities for more than 15 years. Clean units, scheduled service, and a 24/7 line answered by a local team that knows your area.
-      </p>
+        <!-- LEFT · headline + copy -->
+        <div class="ipr-reveal-left text-left">
+          <h1 class="mt-6 font-[var(--ipr-display)] text-4xl font-bold uppercase leading-[1.04] tracking-[-0.01em] text-[var(--ipr-white)] md:text-6xl">
+            Portable Restroom Rentals,<br>
+            <span class="ipr-stencil-tilt">Delivered On Time.</span>
+          </h1>
 
-      <div class="ipr-reveal-up mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="/contact" class="ipr-tab ipr-tab-yellow">Request a Quote</a>
-        <a href="tel:+15417017369" class="ipr-tab ipr-tab-outline">
-          <span class="ipr-tab-outline__inner">Call 24/7 · 541-701-7369</span>
-        </a>
+          <p class="mt-6 max-w-xl text-base leading-7 text-[var(--ipr-white)]/82">
+            Independent Portable Restrooms has served farms, ranches, job sites, and events across Eastern Oregon and the Washington Tri-Cities for more than 15 years. Clean units, scheduled service, and a 24/7 line answered by a local team that knows your area.
+          </p>
+
+          <div class="mt-9 flex flex-col items-start gap-4 sm:flex-row">
+            <a href="/contact" class="ipr-tab ipr-tab-yellow">Request a Quote</a>
+            <a href="tel:+15417017369" class="ipr-tab ipr-tab-outline">
+              <span class="ipr-tab-outline__inner">Call 24/7 · 541-701-7369</span>
+            </a>
+          </div>
+
+          <p class="mt-8 max-w-xl text-sm leading-6 text-[var(--ipr-white)]/70">
+            Whether you need one restroom for a weekend wedding, a full setup for harvest season, or long-term units for a construction project, we handle delivery, weekly cleaning, and pickup so you never have to think about it. One call, one local company, no runaround.
+          </p>
+        </div>
+
+        <!-- RIGHT · quick quote form (versión corta — campos clave solamente) -->
+        <div class="ipr-reveal-right ipr-hero-form-card">
+          <div class="ipr-form-card__header">
+            <p class="ipr-stencil-eyebrow ipr-stencil-eyebrow--dark">Quick Quote</p>
+            <h2 class="mt-3 font-[var(--ipr-display)] text-2xl font-bold uppercase tracking-[-0.01em] text-[var(--ipr-ink)]">
+              Get A Fast Quote
+            </h2>
+            <p class="mt-2 text-sm text-[var(--ipr-steel)]">Se habla español.</p>
+          </div>
+
+          <form
+            id="ipr-hero-quote-form"
+            class="ipr-quote-form"
+            method="post"
+            action="#"
+            novalidate
+          >
+            <div class="ipr-quote-form__grid">
+
+              <div class="ipr-quote-form__field">
+                <label for="ipr-hero-name">Full Name *</label>
+                <input id="ipr-hero-name" type="text" name="full_name" placeholder="Your full name" required>
+              </div>
+
+              <div class="ipr-quote-form__field">
+                <label for="ipr-hero-phone">Phone *</label>
+                <input id="ipr-hero-phone" type="tel" name="phone" placeholder="(541) 000-0000" required>
+              </div>
+
+              <div class="ipr-quote-form__field">
+                <label for="ipr-hero-service">Service Needed *</label>
+                <select id="ipr-hero-service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="Standard">Standard</option>
+                  <option value="ADA">ADA</option>
+                  <option value="Handwash">Handwash</option>
+                  <option value="Trailer">Trailer</option>
+                  <option value="Emergency">Emergency</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </div>
+
+              <div class="ipr-quote-form__field">
+                <label for="ipr-hero-location">Delivery City / Location *</label>
+                <input id="ipr-hero-location" type="text" name="location" placeholder="City or delivery address" required>
+              </div>
+
+              <!-- Honeypot anti-spam — invisible para personas, visible para bots -->
+              <div class="ipr-quote-form__honeypot" aria-hidden="true">
+                <label for="ipr-hero-company">Company</label>
+                <input id="ipr-hero-company" type="text" name="company" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="ipr-quote-form__captcha">
+              <div
+                id="ipr-hero-recaptcha"
+                class="js-ipr-recaptcha"
+                data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE">
+              </div>
+            </div>
+
+            <div class="ipr-quote-form__feedback">
+              <div id="ipr-hero-form-success" class="ipr-form-message ipr-form-message--success" aria-live="polite"></div>
+              <div id="ipr-hero-form-error" class="ipr-form-message ipr-form-message--error" aria-live="polite"></div>
+            </div>
+
+            <button id="ipr-hero-form-submit" type="submit" class="ipr-tab ipr-tab-yellow ipr-quote-form__submit">
+              Request a Quote
+            </button>
+          </form>
+        </div>
+
       </div>
-
-      <p class="ipr-reveal-up mx-auto mt-8 max-w-2xl text-sm leading-6 text-[var(--ipr-white)]/70">
-        Whether you need one restroom for a weekend wedding, a full setup for harvest season, or long-term units for a construction project, we handle delivery, weekly cleaning, and pickup so you never have to think about it. One call, one local company, no runaround.
-      </p>
     </div>
   </section>
 
@@ -505,6 +585,130 @@ get_header(); ?>
     display: block;
   }
 
+  /* ── Hero quote form (mismo form/estilos que /contact) ── */
+  .ipr-hero-form-card {
+    background: var(--ipr-white);
+    border: 2px solid var(--ipr-ink);
+    padding: 2rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .ipr-form-card__header {
+    margin-bottom: 1.75rem;
+  }
+
+  .ipr-quote-form__grid {
+    display: grid;
+    gap: 1.1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .ipr-quote-form__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ipr-quote-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ipr-quote-form__field--full {
+    grid-column: 1 / -1;
+  }
+
+  .ipr-quote-form__field label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ipr-ink);
+  }
+
+  .ipr-quote-form__field input,
+  .ipr-quote-form__field select,
+  .ipr-quote-form__field textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid rgba(26, 26, 26, 0.24);
+    background: var(--ipr-white);
+    padding: 0.75rem 0.9rem;
+    font-size: 0.95rem;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--ipr-ink);
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .ipr-quote-form__field textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .ipr-quote-form__field input:focus,
+  .ipr-quote-form__field select:focus,
+  .ipr-quote-form__field textarea:focus {
+    border-color: var(--ipr-yellow);
+    box-shadow: 0 0 0 3px rgba(208, 22, 28, 0.18);
+  }
+
+  /* Honeypot — oculto de forma accesible (no display:none, para no gatillar
+     algunos filtros anti-bot que ignoran campos display:none) */
+  .ipr-quote-form__honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .ipr-quote-form__captcha {
+    margin-top: 1.5rem;
+  }
+
+  .ipr-quote-form__feedback {
+    margin-top: 1rem;
+  }
+
+  .ipr-form-message {
+    display: none;
+    padding: 0.85rem 1rem;
+    border: 1px solid transparent;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .ipr-form-message.is-visible { display: block; }
+
+  .ipr-form-message--success {
+    background: rgba(110, 110, 115, 0.12);
+    border-color: var(--ipr-wheat);
+    color: var(--ipr-ink);
+  }
+
+  .ipr-form-message--error {
+    background: rgba(122, 14, 18, 0.10);
+    border-color: var(--ipr-rust);
+    color: var(--ipr-rust);
+    margin-top: 0.6rem;
+  }
+
+  .ipr-quote-form__submit {
+    width: 100%;
+    margin-top: 1.5rem;
+    min-height: 54px;
+    justify-content: center;
+    clip-path: none;
+  }
+
+  .ipr-quote-form__submit[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
   /* ── Tear-off tab buttons ── */
   .ipr-tab {
     display: inline-flex;
@@ -859,5 +1063,113 @@ get_header(); ?>
     }
   });
 </script>
+
+<script>
+  window.iprRecaptchaReady = function () {
+    var node = document.getElementById("ipr-hero-recaptcha");
+    if (!node || node.dataset.widgetId || typeof grecaptcha === "undefined") return;
+
+    var widgetId = grecaptcha.render(node, { sitekey: node.dataset.sitekey });
+    node.dataset.widgetId = String(widgetId);
+  };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=iprRecaptchaReady&render=explicit" async defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hero quote form: honeypot + reCAPTCHA + envío (mismo flujo que /contact)
+    var form = document.getElementById("ipr-hero-quote-form");
+    if (!form) return;
+
+    var successBox = document.getElementById("ipr-hero-form-success");
+    var errorBox = document.getElementById("ipr-hero-form-error");
+    var submitBtn = document.getElementById("ipr-hero-form-submit");
+    var captchaNode = document.getElementById("ipr-hero-recaptcha");
+    var honeypot = document.getElementById("ipr-hero-company");
+
+    function resetMessages() {
+      successBox.textContent = "";
+      errorBox.textContent = "";
+      successBox.classList.remove("is-visible");
+      errorBox.classList.remove("is-visible");
+    }
+
+    function showSuccess(message) {
+      successBox.textContent = message;
+      successBox.classList.add("is-visible");
+    }
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.add("is-visible");
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      resetMessages();
+
+      // Honeypot: si un bot llenó este campo oculto, se descarta el envío
+      // silenciosamente (no delatamos al bot que fue detectado).
+      if (honeypot && honeypot.value.trim() !== "") {
+        showSuccess("Thank you. Your request has been sent successfully. We'll be in touch soon.");
+        form.reset();
+        return;
+      }
+
+      if (typeof grecaptcha === "undefined") {
+        showError("reCAPTCHA failed to load. Please refresh the page and try again.");
+        return;
+      }
+
+      var widgetId = captchaNode.dataset.widgetId;
+      if (typeof widgetId === "undefined") {
+        showError("reCAPTCHA is still loading. Please wait a moment and try again.");
+        return;
+      }
+
+      var captchaResponse = grecaptcha.getResponse(Number(widgetId));
+      if (!captchaResponse) {
+        showError("Please complete the reCAPTCHA verification.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      var originalText = submitBtn.textContent;
+      submitBtn.textContent = "Sending...";
+
+      var formData = {
+        name: form.querySelector('input[name="full_name"]').value.trim(),
+        phone: form.querySelector('input[name="phone"]').value.trim(),
+        service: form.querySelector('select[name="service"]').value,
+        location: form.querySelector('input[name="location"]').value.trim(),
+        "g-recaptcha-response": captchaResponse
+      };
+
+      // [EMAIL DESTINO — Pend. #I] Reemplazar service_id/template_id/publicKey
+      // reales de EmailJS cuando el cliente confirme dónde llegan los leads.
+      if (window.emailjs) {
+        emailjs.init({ publicKey: "YOUR_EMAILJS_PUBLIC_KEY_HERE" });
+        emailjs.send("YOUR_SERVICE_ID_HERE", "YOUR_TEMPLATE_ID_HERE", formData)
+          .then(function () {
+            form.reset();
+            grecaptcha.reset(Number(widgetId));
+            showSuccess("Thank you. Your request has been sent successfully. We'll be in touch soon.");
+          })
+          .catch(function () {
+            showError("Something went wrong while sending your request. Please try again, or call us directly.");
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          });
+      } else {
+        showError("Form service not configured yet. Please call us directly at 541-481-3111.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <?php get_footer(); ?>

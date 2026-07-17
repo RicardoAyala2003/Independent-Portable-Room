@@ -44,8 +44,8 @@ get_header(); ?>
   <div class="ipr-accent-bar" aria-hidden="true"></div>
 
   <!-- 02 · QUOTE FORM + 03 · CONTACT DETAILS -->
-  <section class="bg-[var(--ipr-white)] py-16 lg:py-20">
-    <div class="mx-auto max-w-6xl px-4">
+  <section class="ipr-stamped-contact-light relative bg-[var(--ipr-paper)] py-16 lg:py-20">
+    <div class="relative z-10 mx-auto max-w-6xl px-4">
       <div class="grid gap-12 lg:grid-cols-[1.3fr_0.9fr] lg:items-start">
 
         <!-- QUOTE FORM -->
@@ -196,6 +196,8 @@ get_header(); ?>
     </div>
   </section>
 
+  <div class="ipr-accent-bar" aria-hidden="true"></div>
+
 </main>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -231,6 +233,28 @@ get_header(); ?>
     );
     opacity: 0.1;
     mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  /* Variante clara del patrón estampado (misma que About), para secciones sobre --ipr-paper */
+  .ipr-stamped-contact-light {
+    overflow: hidden;
+  }
+
+  .ipr-stamped-contact-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--ipr-ink) 0,
+      var(--ipr-ink) 2px,
+      transparent 2px,
+      transparent 30px
+    );
+    background-attachment: fixed;
+    opacity: 0.05;
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 

@@ -57,7 +57,7 @@ function Footer() {
         <div className="ipr-footer__col">
           <a href="/" className="ipr-footer__brand">
             <img
-              src="/wp-content/uploads/2026/07/IPR_Brand_Logo.png"
+              src="/wp-content/uploads/2026/07/IPR_Brand_Logo-e1784221669327.png"
               alt="Independent Portable Restrooms"
               className="ipr-footer__logo"
             />
